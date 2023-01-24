@@ -1,0 +1,24 @@
+.welkom-image img {
+    max-width: 70%;
+}
+
+.welkom-image {
+    display: flex;
+    justify-content: end;
+}
+
+.welkom-block {
+    margin-top: 2%;
+    width: 90%;
+    margin: auto;
+}
+
+.welkom-text h1 {
+    display: table;
+    background-color: #00BC85;
+    padding: 10px;
+}
+
+.welkom-h1-white {
+    color: white;
+}
