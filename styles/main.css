@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Maison Neue Book";
+    color: #3E3C4F;
+}
+
+#container {
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #f1f0eb;
+    margin: auto;
+}
+
+.button {
+    height: 50px;
+    width: 90%;
+    margin: 10px 0;
+    border: 0;
+}
+
+.button-red {
+    background-color: #FC6256;
+}
+
+.button-blue {
+    background-color: #3E3C4F;
+}
+
+.button a {
+    text-decoration: none;
+    font-family: "Maison Neue Book";
+    font-size: 30px;
+    color: #f1f0eb;
+}
