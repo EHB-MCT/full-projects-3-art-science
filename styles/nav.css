@@ -27,7 +27,7 @@ body {
 }
 
 .overlay a {
-  padding: 13px;
+  padding: 7%;
   text-decoration: none;
   font-size: 18px;
   color: #F1F0EB;
@@ -109,4 +109,8 @@ body {
   border-bottom: 0.5px solid #F1F0EB;
   background-color: #cdd4ffcb;
 
+}
+
+.overlay-content > div {
+  height: 9.4vh;
 }
