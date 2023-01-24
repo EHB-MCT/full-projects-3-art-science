@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/login_register.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
     <title>Kunst in huis | Registreer</title>
 </head>
@@ -14,24 +14,35 @@
     <div id="container">
         <div class="Registreer-container">
             <div class="logo-container">
-                <span><a href="#"><img src="./img/logo.png" alt="kunst in huis"></a></span>
+                <span><a href="#"><img src="../img/logo.png" alt="kunst in huis"></a></span>
             </div>
             <div class="title">
                 <h1>Registreer</h1>
             </div>
             <div class="input-box">
-                <img class="user-icon" src="./img/user-icon.png" alt="user-icon">
+                <img class="user-icon" src="../img/user-icon.png" alt="user-icon">
                 <section>
                     <span>
-                        <label for="email"><i class="fa-solid fa-user"></i></i></label>
+                        <label for="firstname"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" placeholder="Voornaam" id="firstname">
+                    </span>
+                    <span>
+                        <label for="lastname"><i class="fa-solid fa-user"></i></label>
+                        <input type="text" placeholder="Achternaam" id="lastname">
+                    </span>
+                    <span>
+                        <label for="email"><i class="fa-solid fa-at"></i></label>
                         <input type="email" placeholder="E-mail" id="email">
                     </span>
                     <span>
                         <label for="password"><i class="fa-solid fa-lock"></i></label>
                         <input type="password" placeholder="Wachtwoord" id="password">
                     </span>
+                    <span>
+                        <label for="password2"><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" placeholder="Bevestig wachtwoord" id="password2">
+                    </span>
                 </section>
-                <button class="button button-red"><a href="#">Inloggen</a></button>
                 <button class="button button-blue"> <a href="#">Registreer</a></button>
             </div>
         </div>
