@@ -1,0 +1,106 @@
+@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
+@import url(//db.onlinewebfonts.com/c/d9e4167d93282285853c2410eafc4abd?family=Clearface+ITC+Pro);
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Maison Neue Book";
+    color: #3E3C4F;
+}
+
+#container {
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #f1f0eb;
+    margin: auto;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container img {
+    width: 40%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.title h1 {
+    font-size: 40px;
+    font-family: "Clearface ITC Pro";
+    font-weight: 400;
+}
+
+.input-box {
+    background-color: white;
+    width: 90%;
+    border-radius: 10px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    margin-top: 15%;
+    padding: 30px 0;
+    position: relative;
+}
+
+.input-box section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.input-box section input {
+    width: 90%;
+    margin: auto;
+    border: 0;
+    outline: 0;
+    padding-top: 40px;
+}
+
+.input-box section input::placeholder {
+    font-size: 18px;
+    color: #3E3C4F;
+    padding-left: 10px;
+}
+
+.input-box section span {
+    border-bottom: 1px solid #3E3C4F;
+    width: 90%;
+    margin: auto;
+}
+
+.button {
+    height: 50px;
+    width: 90%;
+    margin: 10px 0;
+    border: 0;
+}
+
+.button-red {
+    background-color: #FC6256;
+}
+
+.button-blue {
+    background-color: #3E3C4F;
+}
+
+.button a {
+    text-decoration: none;
+    font-family: "Maison Neue Book";
+    font-size: 30px;
+    color: #f1f0eb;
+}
+
+.user-icon {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
