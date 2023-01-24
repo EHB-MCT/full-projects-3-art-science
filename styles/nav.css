@@ -1,0 +1,112 @@
+@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
+
+body {
+  font-family: 'Maison Neue Book';
+  margin: 0px;
+  padding: 0px;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3E3C4F;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 0%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 13px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #F1F0EB;
+  display: block;
+  transition: 0.2s;
+  border-top: 0.5px solid #F1F0EB;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  padding: 0px;
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 30px;
+  color: #F1F0EB;
+  border: none;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {
+    overflow-y: auto;
+  }
+
+  .overlay a {
+    font-size: 20px
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.nav-button {
+  color: #F1F0EB;
+  padding: 0px;
+  position: absolute;
+  top: 3px;
+  right: 23px;
+  font-size: 43px;
+  cursor: pointer;
+
+}
+
+.nav-grid {
+  display: grid;
+  max-height: 7vh;
+  background-color: #3E3C4F;
+}
+
+.nav-grid img {
+  display: block;
+  max-width: 10vh;
+  margin: 0 auto;
+
+}
+
+.navimg-overlay {
+  display: block;
+  max-width: 10vh;
+  margin: 0 auto;
+}
+
+.iconswipe {
+  max-width: 2.04vh;
+}
+
+.active {
+  background-color: #FC6256;
+}
+
+.log-out{
+  border-bottom: 0.5px solid #F1F0EB;
+  background-color: #cdd4ffcb;
+
+}
