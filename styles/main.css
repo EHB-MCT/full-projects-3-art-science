@@ -1,5 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
 @import url(//db.onlinewebfonts.com/c/d9e4167d93282285853c2410eafc4abd?family=Clearface+ITC+Pro);
+@import "nav.css";
+@import "login_register.css";
 
 * {
     margin: 0;
@@ -8,7 +10,7 @@
     color: #3E3C4F;
 }
 
-#container {
+.container {
     width: 100%;
     min-width: 320px;
     min-height: 100vh;
