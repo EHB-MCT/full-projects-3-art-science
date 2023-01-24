@@ -1,3 +1,7 @@
+@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
+@import url(//db.onlinewebfonts.com/c/d9e4167d93282285853c2410eafc4abd?family=Clearface+ITC+Pro);
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -33,4 +37,10 @@
     font-family: "Maison Neue Book";
     font-size: 30px;
     color: #f1f0eb;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: "Clearface ITC Pro";
+    font-weight: 400;
 }
