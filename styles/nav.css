@@ -44,7 +44,7 @@ body {
 .overlay .closebtn {
   padding: 0px;
   position: absolute;
-  top: 20px;
+  top: 17px;
   right: 28px;
   font-size: 30px;
   color: #F1F0EB;
@@ -71,7 +71,7 @@ body {
   color: #F1F0EB;
   padding: 0px;
   position: absolute;
-  top: 3px;
+  top:-1px;
   right: 23px;
   font-size: 43px;
   cursor: pointer;
