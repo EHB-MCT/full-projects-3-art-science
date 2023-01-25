@@ -19,7 +19,7 @@ document.getElementById("btn-register").addEventListener("click", e => {
             } else {
                 document.getElementById("messageRegister").innerHTML = data.message;
                 document.getElementById("messageRegister").style.display = "block";
-                document.getElementById("messageRegister").style.color = "red";
+                document.getElementById("messageRegister").style.color = "#FC6256";
             }
 
         })
