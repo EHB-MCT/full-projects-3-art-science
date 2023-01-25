@@ -40,6 +40,7 @@
     grid-template-columns: 2fr 2fr 1.7fr;
     text-align: center;
     font-size: 13px;
+    margin-left: 7px;
 }
 
 .profile-grid>button {
@@ -75,6 +76,7 @@
 .profile-grid>button h3 {
     color: #3E3C4F;
     font-weight: 100;
+    font-size: 14px;
 }
 
 .profile-grid>a img {
@@ -90,6 +92,7 @@
 .profile-grid>a h3 {
     color: #3E3C4F;
     font-weight: 100;
+    font-size: 14px;
 }
 
 .profile-title {
