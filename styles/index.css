@@ -1,0 +1,7 @@
+img {
+    width: auto;
+}
+
+.nav-grid img {
+    max-width: 18vh;
+}
