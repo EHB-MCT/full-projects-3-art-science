@@ -1,5 +1,7 @@
 .welkom-image img {
     max-width: 70%;
+    z-index: -1;
+    margin-top: -30%;
 }
 
 .welkom-image {
@@ -17,8 +19,17 @@
     display: table;
     background-color: #00BC85;
     padding: 10px;
+    margin-bottom: -5%;
 }
 
 .welkom-h1-white {
     color: white;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container img {
+    width: 40%;
 }
