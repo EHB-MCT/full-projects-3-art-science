@@ -17,10 +17,3 @@ function domArtworks() {
     document.getElementById("artworks").style.display = "block";
     document.getElementById("collections").style.display = "none";
 }
-
-let x = Math.floor(Math.random() * 6) + 1;
-
-let image = ["one", "two", "three"]
-
-console.log(x);
-console.log(image[x]);

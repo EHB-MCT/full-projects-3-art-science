@@ -26,8 +26,21 @@ h3 {
 }
 
 .company-package-slider {
-    margin-top: 3%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     display: flex;
     justify-content: center;
     gap: 15%;
+}
+
+#multi {
+    border-bottom: 3px solid #FC6256;
+}
+
+.selection-text {
+    margin-bottom: 5%;
+}
+
+mark {
+    background: #FC6256;
 }
