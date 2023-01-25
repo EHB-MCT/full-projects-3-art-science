@@ -58,9 +58,11 @@ img {
 
 
 .greenBackground-title {
+    display: table;
     background-color: #00BC85;
+    padding: 10px;
     color: white;
-    width: 71%;
+
 }
 
 .fa-circle-left,
