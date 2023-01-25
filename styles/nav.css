@@ -27,14 +27,13 @@ body {
 }
 
 .overlay a {
-  padding: 13px;
+  padding: 7%;
   text-decoration: none;
-  font-size: 32px;
+  font-size: 18px;
   color: #F1F0EB;
   display: block;
   transition: 0.2s;
   border-top: 0.5px solid #F1F0EB;
-
 }
 
 .overlay a:hover,
@@ -72,7 +71,7 @@ body {
   color: #F1F0EB;
   padding: 0px;
   position: absolute;
-  top: -1px;
+  top:-1px;
   right: 23px;
   font-size: 43px;
   cursor: pointer;
@@ -106,8 +105,12 @@ body {
   background-color: #FC6256;
 }
 
-.log-out {
+.log-out{
   border-bottom: 0.5px solid #F1F0EB;
   background-color: #cdd4ffcb;
 
+}
+
+.overlay-content > div {
+  height: 9.4vh;
 }
