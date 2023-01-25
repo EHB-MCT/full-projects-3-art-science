@@ -1,0 +1,123 @@
+.person-name {
+    position: absolute;
+    top: 32vw;
+    left: 7vw;
+    font-family: "Clearface ITC Pro";
+    font-weight: 300;
+}
+
+.profile-banner {
+    max-width: 100%;
+    position: relative;
+
+}
+
+.person-name h1 {
+    margin-bottom: 0;
+    padding: 6px;
+    font-size: 1.9em;
+}
+
+.cropped-img {
+    border-radius: 50%;
+    border: 12px solid #f1f0eb;
+    object-fit: cover;
+    position: relative;
+    height: 22vw;
+}
+
+.profile-img {
+    position: absolute;
+    max-width: 22vw;
+    right: 12vw;
+    top: 42vw;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1.7fr;
+    text-align: center;
+    font-size: 13px;
+}
+
+.profile-grid>button {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: block;
+    margin: 15px;
+    padding: 4px;
+    border: none;
+}
+
+.profile-grid>a {
+    cursor: pointer;
+    background-color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: block;
+    margin: 15px;
+    padding: 4px;
+    border: none;
+}
+
+.profile-grid>button img {
+    padding-top: 5%;
+    width: 43%;
+}
+
+.profile-grid>button {
+    text-decoration: none;
+
+}
+
+.profile-grid>button h3 {
+    color: #3E3C4F;
+    font-weight: 100;
+}
+
+.profile-grid>a img {
+    padding-top: 5%;
+    width: 40%;
+}
+
+.profile-grid>a {
+    text-decoration: none;
+
+}
+
+.profile-grid>a h3 {
+    color: #3E3C4F;
+    font-weight: 100;
+}
+
+.profile-title {
+    margin-top: 5%;
+    text-align: center;
+    color: #3E3C4F;
+}
+
+.profile-collections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.profile-collections h3,
+p {
+    font-weight: 100;
+    text-align: center;
+    font-size: 18px;
+}
+
+.profile-collections p {
+
+    font-size: 12px;
+}
+
+.profile-collections div {
+
+    margin-bottom: 0%;
+}
