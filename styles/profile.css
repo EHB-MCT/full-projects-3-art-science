@@ -1,11 +1,13 @@
 .person-name {
     position: absolute;
-    top: 32vw;
-    left: 7vw;
+    bottom: 25px;
+    left: 25px;
     font-family: "Clearface ITC Pro";
     font-weight: 300;
 }
-
+.profile-header{
+    position: relative;
+}
 .profile-banner {
     max-width: 100%;
     position: relative;
@@ -29,8 +31,8 @@
 .profile-img {
     position: absolute;
     max-width: 22vw;
-    right: 12vw;
-    top: 42vw;
+    right: 40px;
+    bottom: -20px;
 }
 
 .profile-grid {
@@ -38,6 +40,7 @@
     grid-template-columns: 2fr 2fr 1.7fr;
     text-align: center;
     font-size: 13px;
+    margin-left: 7px;
 }
 
 .profile-grid>button {
@@ -73,6 +76,7 @@
 .profile-grid>button h3 {
     color: #3E3C4F;
     font-weight: 100;
+    font-size: 14px;
 }
 
 .profile-grid>a img {
@@ -88,6 +92,7 @@
 .profile-grid>a h3 {
     color: #3E3C4F;
     font-weight: 100;
+    font-size: 14px;
 }
 
 .profile-title {
