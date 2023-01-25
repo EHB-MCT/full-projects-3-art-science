@@ -10,7 +10,7 @@ body {
   height: 0%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: #3E3C4F;
@@ -71,7 +71,7 @@ body {
   color: #F1F0EB;
   padding: 0px;
   position: absolute;
-  top:-1px;
+  top: -1px;
   right: 23px;
   font-size: 43px;
   cursor: pointer;
@@ -88,6 +88,7 @@ body {
   display: block;
   max-width: 10vh;
   margin: 0 auto;
+  z-index: 1;
 
 }
 
@@ -105,12 +106,12 @@ body {
   background-color: #FC6256;
 }
 
-.log-out{
+.log-out {
   border-bottom: 0.5px solid #F1F0EB;
   background-color: #cdd4ffcb;
 
 }
 
-.overlay-content > div {
+.overlay-content>div {
   height: 9.4vh;
 }
