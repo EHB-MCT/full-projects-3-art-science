@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/discover.css">
+    <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+    <title>Kunst in huis | Swipe Interesses</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                    <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
+                <img class="navimg-overlay" src="../img/logo.png" alt="logo">
+                <div class="overlay-content">
+
+                    <a class="active" href="discover_suggestions.html"> <i class="fa-sharp fa-solid fa-compass"></i>
+                        Ontdek suggesties</a>
+                    <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a>
+                    <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a>
+                    <a href="interests.html"> <img class="iconswipe" src="../img/Swipeicon.png" alt="swipe icon"> Swipe
+                        interesses</a>
+                    <a href="https://kunstinhuis.be/agenda/"><i class="fa-solid fa-calendar-days"></i> Agenda</a>
+                    <a href="https://kunstinhuis.be/kunstcheque/"><i class="fa-solid fa-gift"></i> Kunstcheque</a>
+                    <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a>
+                    <a href="profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a>
+                    <a class="log-out" href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a>
+                </div>
+            </div>
+
+            <div class="nav-grid">
+                <div class="back-button">
+                </div>
+                <img src="../img/logo.png" alt=""> <span class="nav-button" onclick="openNav()">&#9776; </span>
+            </div>
+
+        </header>
+        <div class="paragraph-photo-btn">
+            <div id="paragraph">
+                <h1>Ontdek suggesties</h1>
+                <p>Je kunstwerk swipes zullen je hieronder een groot aantal suggesties geven van kunst die jou misschien
+                    zullen interesseren.
+                </p>
+            </div>
+            <div class="buttons">
+                <button class="button button-red"><a href="#">Kunstwerken</a></button> <button
+                    class="button button-red"><a href="#">Collecties</a></button></div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="../img/art_1.png">
+                <div class="card-text is-available">
+                    <h3>Mijn hart luchten</h3>
+                    <h4>Door Bas van den Hout</h4>
+                    <div class="availability">
+                        <p>Beschikbaar <i class="fa-solid fa-check"></i></p>
+                        <button class="button button-blue"><a href="suggestions_info.html">Details <i
+                                    class="fa-solid fa-circle-info"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../img/art_1.png">
+                <div class="card-text not-available">
+                    <h3>De stemmen van de zee</h3>
+                    <h4>Door Frans De Schilder</h4>
+                    <div class="availability">
+                        <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
+                        <button class="button button-blue"><a>Details<i
+                                    class="fa-solid fa-circle-info"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../img/art_1.png">
+                <div class="card-text not-available">
+                    <h3>De stemmen van de zee</h3>
+                    <h4>Door Frans De Schilder</h4>
+                    <div class="availability">
+                        <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
+                        <button class="button button-blue"><a>Details<i
+                                    class="fa-solid fa-circle-info"></i></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+
+</html>
