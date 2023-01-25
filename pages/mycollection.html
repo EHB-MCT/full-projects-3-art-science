@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/profile.css">
-
+    <link rel="stylesheet" href="../styles/mycollections.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
     <title>Kunst in huis | Aanmelden</title>
 </head>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="nav-grid">
-                <div class="back-button">
+                <div class="back-button"> <a href="profile.html"><i class="fa-solid fa-circle-left fa-xl"></i></a>
                 </div>
                 <img src="../img/logo.png" alt=""> <span class="nav-button" onclick="openNav()">&#9776; </span>
             </div>
@@ -57,47 +57,29 @@
             </div>
         </div>
 
-        <div class="profile-grid">
-            <a href="swipe.html"><img src="../img/profileswipe.png" alt="Swipe icon"><br>
-                <h3>Swipe interesses</h3>
-            </a>
-            <button><img src="../img/profileedit.png" alt="Swipe icon"><br>
-                <h3>Profiel bewerken</h3>
-            </button>
-        </div>
-        <h1 class="profile-title">Mijn Collecties</h1>
-        <div class="profile-collections ">
-            <div class="card">
-                <a href="mycollection.html"><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-        </div>
+       
+        
+      <div class="collection-head">
+        <h1 class="collection-title">Mijn Collectie</h1>
+        <h3 class="collection-name">Stedelijke Kunst</h3>
+
+        <label class="switch">
+            <input type="checkbox" class="checkbox">
+            <span class="toggle-thumb">
+       
+                <svg class="switch-icon" xmlns="http://www.w3.org/2000/svg" width="14.318" height="16.363" viewBox="0 0 14.318 16.363">
+                    <path id="Icon_awesome-unlock" data-name="Icon awesome-unlock" d="M12.784,8.182H4.858v-3.3a2.3,2.3,0,1,1,4.6-.029v.511a.765.765,0,0,0,.767.767H11.25a.765.765,0,0,0,.767-.767V4.858A4.858,4.858,0,1,0,2.3,4.906V8.182H1.534A1.534,1.534,0,0,0,0,9.716v5.114a1.534,1.534,0,0,0,1.534,1.534h11.25a1.534,1.534,0,0,0,1.534-1.534V9.716A1.534,1.534,0,0,0,12.784,8.182Z" transform="translate(0 0)" fill="#00bc85"/>
+                  </svg>
+                  
+       
+                  <svg class="switch-icon" xmlns="http://www.w3.org/2000/svg" width="12.833" height="15.077" viewBox="0 0 12.833 15.077">
+                    <path id="Icon_awesome-lock" data-name="Icon awesome-lock" d="M11.458,6.6h-.687V4.476A4.422,4.422,0,0,0,6.417,0,4.422,4.422,0,0,0,2.062,4.476V6.6H1.375A1.4,1.4,0,0,0,0,8.01v5.654a1.4,1.4,0,0,0,1.375,1.413H11.458a1.4,1.4,0,0,0,1.375-1.413V8.01A1.4,1.4,0,0,0,11.458,6.6Zm-2.979,0H4.354V4.476a2.063,2.063,0,1,1,4.125,0Z" transform="translate(0 0)" fill="#3e3c4f"/>
+                  </svg>
+                  
+                         
+            </span>
+       </label>
+      </div>
 
     </div>
     <script>
