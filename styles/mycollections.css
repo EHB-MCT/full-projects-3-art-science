@@ -46,7 +46,7 @@ h1, h3 {
     left: 4px;
     bottom: 4px;
     border-radius: 50%;
-    background-color: #f1f0eb;
+    background-color: white;
     transition: .4s all ease;
   }
 
@@ -59,10 +59,14 @@ h1, h3 {
   }
   .checkbox:checked + .toggle-thumb:before {
     transform: translateX(26px);
+    background-color: #00BC85;
   }
+
+ 
 
   .switch-icon{
     margin: 0 auto;
     z-index: 1;
+    width: 80%;
     
   }
