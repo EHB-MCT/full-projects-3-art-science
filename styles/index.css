@@ -5,3 +5,29 @@ img {
 .nav-grid img {
     max-width: 18vh;
 }
+
+.welkom-block {
+    margin-top: 35% !important;
+}
+
+.style-text-block {
+    width: 90%;
+    margin-top: 5% !important;
+    margin: auto;
+}
+
+.buttons {
+    margin-top: 3% !important;
+}
+
+h3 {
+    display: inline-block;
+
+}
+
+.company-package-slider {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+}
