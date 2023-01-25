@@ -42,4 +42,45 @@ h1 {
     font-size: 40px;
     font-family: "Clearface ITC Pro";
     font-weight: 400;
+    margin-bottom: 3%;
+}
+
+img {
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 10%;
+    padding: 2%;
+}
+
+
+.greenBackground-title {
+    background-color: #00BC85;
+    color: white;
+    width: 71%;
+}
+
+.fa-circle-left,
+.fa-circle-info {
+    color: white;
+}
+
+.nav-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.back-button {
+    padding-top: 10%;
+    margin-left: 15%;
+}
+
+.fa-check {
+    color: #00BC85;
+}
+
+.fa-xmark {
+    color: #FC6256;
 }
