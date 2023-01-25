@@ -10,6 +10,7 @@
     width: 90%;
     margin: 10px 0;
     border: 0;
+    color: #fff;
 }
 
 .buttons {
@@ -92,4 +93,9 @@
 
 .container-collections .is-available {
     margin-top: 5%;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
 }
