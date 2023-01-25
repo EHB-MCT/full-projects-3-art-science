@@ -78,6 +78,11 @@
     margin: auto;
 }
 
+.card-text i {
+    margin-left: 3%;
+    margin-bottom: 2%;
+}
+
 .card-collecions-img {
     display: grid;
     grid-template-columns: 1fr 1fr;
