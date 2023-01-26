@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/mycollections.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+    <script src="../js/logout.js" defer></script>
     <title>Kunst in huis | Collectie pagina</title>
 </head>
 
@@ -31,7 +32,8 @@
                     <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
                     <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
                     <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
-                    <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
+                    <div class="log-out"> <a href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
+                            Uitloggen</a></div>
                 </div>
             </div>
 
@@ -86,6 +88,7 @@
         </div>
 
     </div>
+    <script src="../js/auth.js"></script>
     <script>
         function openNav() {
             document.getElementById("myNav").style.height = "100%";

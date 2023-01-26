@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/discover.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+    <script src="../js/logout.js" defer></script>
     <title>Kunst in huis | Ontdek Suggesties</title>
 </head>
 
@@ -31,7 +32,8 @@
                     <a href="https://kunstinhuis.be/kunstcheque/"><i class="fa-solid fa-gift"></i> Kunstcheque</a>
                     <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a>
                     <a href="profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a>
-                    <a class="log-out" href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a>
+                    <a class="log-out" href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
+                        Uitloggen</a>
                 </div>
             </div>
 
@@ -45,7 +47,7 @@
         <div class="container-artworks" id="artworks">
             <div class="paragraph-photo-btn">
                 <div id="paragraph">
-                    <h1>Hey (gebruiker)</h1>
+                    <h1 id="greatUser-artworksInfo">Hey (gebruiker)</h1>
                     <p>Je kunstwerk swipes zullen je hieronder een groot aantal suggesties geven van kunst die jou
                         misschien
                         zullen interesseren.
@@ -75,7 +77,7 @@
         <div class="container-collections" id="collections">
             <div class="paragraph-photo-btn">
                 <div id="paragraph">
-                    <h1>Hey (gebruiker)</h1>
+                    <h1 id="greatUser-collectionInfo">Hey (gebruiker)</h1>
                     <p>Je kunstwerk swipes zullen je hieronder een aantal collecties van andere gebruikers weergeven die
                         jou misschien interesseren.
 
@@ -121,6 +123,7 @@
         document.getElementById("myNav").style.height = "0%";
     }
 </script>
+<script src="../js/auth.js"></script>
 <script src="../js/discover.js"></script>
 <script src="../js/discover_suggestions.js"></script>
 
