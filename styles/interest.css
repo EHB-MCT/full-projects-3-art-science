@@ -7,3 +7,9 @@
 .button {
     width: 100%;
 }
+
+img {
+    margin-top: 25px;
+    scale: 1.2;
+    margin-bottom: 50px;
+}

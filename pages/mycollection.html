@@ -27,12 +27,13 @@
                     </div>
                     <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
                     <div> <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a></div>
-                    <div> <a href="#"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe interesses</a>
+                    <div> <a href="interests.html"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe
+                            interesses</a>
                     </div>
                     <div> <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a></div>
                     <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
                     <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
-                    <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
+                    <div> <a href="profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
                     <div class="log-out"> <a href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
                             Uitloggen</a></div>
                 </div>
@@ -51,8 +52,8 @@
             <img class="profile-banner" src="../img/bannerprofile.png" alt="">
 
             <div class="person-name ">
-                <h1 class="greenBackground-title">Voornaam</h1>
-                <h1 class="greenBackground-title">Achternaam</h1>
+                <h1 class="greenBackground-title" id="myCollection-Voornaam">Voornaam</h1>
+                <h1 class="greenBackground-title" id="myCollection-Achternaam">Achternaam</h1>
             </div>
             <div class="profile-img ">
                 <div class="circle"> <img class="cropped-img"
@@ -65,7 +66,7 @@
 
         <div class="collection-head">
             <h1 class="collection-title">Mijn Collectie</h1>
-            <h3 class="collection-name">Stedelijke Kunst</h3>
+            <h3 class="collection-name">Rode kunst</h3>
             <div class="switch-pos">
                 <label class="switch">
                     <input type="checkbox" class="checkbox">
@@ -97,10 +98,10 @@
         </div>
         <div id="artworks-cards" class="cards">
             <div class="card">
-                <img src="../img/art_1.png">
+                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/1515_0012_382_520_s.jpg">
                 <div class="card-text not-available">
-                    <h3>Mijn hart luchten</h3>
-                    <h4>Door Bas van den Hout</h4>
+                    <h3>Dys. Ut. - Part VI</h3>
+                    <h4>Door Dilum Coppens</h4>
                     <div class="availability-mycoll">
                         <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
                         <button class="button-mycol button-blue"><a><i
@@ -111,10 +112,24 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../img/art_1.png">
+                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/0381_0189_694_459_s.JPG">
+                <div class="card-text not-available">
+                    <h3>Dys. Ut. - Part VI</h3>
+                    <h4>Door Dilum Coppens</h4>
+                    <div class="availability-mycoll">
+                        <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
+                        <button class="button-mycol button-blue"><a><i
+                                    class="fa-solid fa-circle-info fa-xl"></i></a></button>
+                        <button class="button-mycol button-red"><a><i
+                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/0156_0183_694_492_s.jpg">
                 <div class="card-text is-available">
-                    <h3>De stemmen van de zee</h3>
-                    <h4>Door Frans De Schilder</h4>
+                    <h3>De schepping</h3>
+                    <h4>Door Veerle Rooms</h4>
                     <div class="availability-mycoll">
                         <p>Beschikbaar <i class="fa-solid fa-check"></i></p>
                         <button class="button-mycol button-blue"><a><i
@@ -125,10 +140,10 @@
                 </div>
             </div>
             <div class="card">
-                <img src="../img/art_1.png">
+                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/1116_0019_619_520_s.jpg">
                 <div class="card-text not-available">
-                    <h3>De stemmen van de zee</h3>
-                    <h4>Door Frans De Schilder</h4>
+                    <h3>The phantom of the opera</h3>
+                    <h4>Door Luc Smekens</h4>
                     <div class="availability-mycoll">
                         <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
                         <button class="button-mycol button-blue"><a><i
@@ -142,7 +157,8 @@
 
 
     </div>
-    <script src="../js/auth.js"></script>
+    <script src="../js/mycollectionAuth.js"></script>
+
     <script>
         function openNav() {
             document.getElementById("myNav").style.height = "100%";
