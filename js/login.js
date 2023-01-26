@@ -5,7 +5,7 @@ document.getElementById("btn-login").addEventListener("click", e => {
     getData("http://localhost:3000/login", "POST", user).then(data => {
         if (data.status) {
             sessionStorage.setItem("user", JSON.stringify(data.data))
-            location.replace('welkom.html')
+            location.replace('profile.html')
         } else {
             document.getElementById("messageLogin").innerHTML = data.message;
             document.getElementById("messageLogin").style.color = "#FC6256";
