@@ -1,8 +1,8 @@
-let user = JSON.parse(sessionStorage.getItem('user'));
+let userId = JSON.parse(sessionStorage.getItem('user'));
 getAllData();
 async function getAllData() {
     const jsonData = await getData("../js/artworksData.json");
-    const userInterest = await getData(`http://localhost:3000/getUserInterest?id=${user.userId}`);
+    const userInterest = await getData(`http://localhost:3000/getUserInterest?id=${userId.userId}`);
     filterOnJson(jsonData, userInterest);
 }
 
