@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="../styles/mycollections.css">
     <link rel="stylesheet" href="../styles/discover.css">
     <link rel="stylesheet" href="../styles/nav.css">
-    <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
     <script src="../js/logout.js" defer></script>
-    <title>Kunst in huis | Collectie pagina</title>
+    <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+    <title>Kunst in huis | Aanmelden</title>
 </head>
 
 <body>
@@ -33,8 +33,7 @@
                     <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
                     <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
                     <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
-                    <div class="log-out"> <a href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
-                            Uitloggen</a></div>
+                    <div class="log-out"> <a href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
                 </div>
             </div>
 
@@ -64,36 +63,11 @@
 
 
         <div class="collection-head">
-            <h1 class="collection-title">Mijn Collectie</h1>
-            <h3 class="collection-name">Stedelijke Kunst</h3>
-            <div class="switch-pos">
-                <label class="switch">
-                    <input type="checkbox" class="checkbox">
-                    <span class="toggle-thumb">
-                        <svg class="switch-icon" xmlns="http://www.w3.org/2000/svg" width="12.833" height="15.077"
-                            viewBox="0 0 12.833 15.077">
-                            <path id="Icon_awesome-lock" data-name="Icon awesome-lock"
-                                d="M11.458,6.6h-.687V4.476A4.422,4.422,0,0,0,6.417,0,4.422,4.422,0,0,0,2.062,4.476V6.6H1.375A1.4,1.4,0,0,0,0,8.01v5.654a1.4,1.4,0,0,0,1.375,1.413H11.458a1.4,1.4,0,0,0,1.375-1.413V8.01A1.4,1.4,0,0,0,11.458,6.6Zm-2.979,0H4.354V4.476a2.063,2.063,0,1,1,4.125,0Z"
-                                transform="translate(0 0)" fill="#3e3c4f" />
-                        </svg>
-                        <svg class="switch-icon" xmlns="http://www.w3.org/2000/svg" width="17.499" height="19.999"
-                            viewBox="0 0 17.499 19.999">
-                            <path id="Icon_awesome-unlock" data-name="Icon awesome-unlock"
-                                d="M15.624,10H5.937V5.972a2.813,2.813,0,1,1,5.625-.035v.625A.935.935,0,0,0,12.5,7.5h1.25a.935.935,0,0,0,.937-.937V5.937A5.937,5.937,0,1,0,2.812,6v4H1.875A1.875,1.875,0,0,0,0,11.875v6.25A1.875,1.875,0,0,0,1.875,20h13.75A1.875,1.875,0,0,0,17.5,18.124v-6.25A1.875,1.875,0,0,0,15.624,10Z"
-                                transform="translate(0 0)" fill="#3e3c4f" />
-                        </svg>
-                    </span>
-                </label>
-
-            </div>
-            <div class="delete-span">
-                <button class="delete-button">
-                    <i class="fa-solid fa-trash-can"></i> &nbsp;
-                    <h3>Verwijder</h3>
-                </button>
-            </div>
-
-            <br>
+            <h1 class="collection-title">Collectie</h1>
+            <h3 class="collection-name">Rode kunst</h3>
+           
+           <button class="follow-col"> Collectie volgen <i class="fa-solid fa-square-plus"></i></button>
+         <!--<button class="follow-col"> Collectie gevolgt <i class="fa-solid fa-check"></i></button>-->    
         </div>
         <div id="artworks-cards" class="cards">
             <div class="card">
@@ -101,12 +75,11 @@
                 <div class="card-text not-available">
                     <h3>Mijn hart luchten</h3>
                     <h4>Door Bas van den Hout</h4>
-                    <div class="availability-mycoll">
+                    <div class="availability-othercoll">
                         <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
                         <button class="button-mycol button-blue"><a><i
                                     class="fa-solid fa-circle-info fa-xl"></i></a></button>
-                        <button class="button-mycol button-red"><a><i
-                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
+                    
                     </div>
                 </div>
             </div>
@@ -115,12 +88,11 @@
                 <div class="card-text is-available">
                     <h3>De stemmen van de zee</h3>
                     <h4>Door Frans De Schilder</h4>
-                    <div class="availability-mycoll">
+                    <div class="availability-othercoll">
                         <p>Beschikbaar <i class="fa-solid fa-check"></i></p>
                         <button class="button-mycol button-blue"><a><i
                                     class="fa-solid fa-circle-info fa-xl"></i></a></button>
-                        <button class="button-mycol button-red"><a><i
-                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
+                       
                     </div>
                 </div>
             </div>
@@ -129,12 +101,11 @@
                 <div class="card-text not-available">
                     <h3>De stemmen van de zee</h3>
                     <h4>Door Frans De Schilder</h4>
-                    <div class="availability-mycoll">
+                    <div class="availability-othercoll">
                         <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
                         <button class="button-mycol button-blue"><a><i
                                     class="fa-solid fa-circle-info fa-xl"></i></a></button>
-                        <button class="button-mycol button-red"><a><i
-                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
+                       
                     </div>
                 </div>
             </div>
@@ -142,7 +113,6 @@
 
 
     </div>
-    <script src="../js/auth.js"></script>
     <script>
         function openNav() {
             document.getElementById("myNav").style.height = "100%";
