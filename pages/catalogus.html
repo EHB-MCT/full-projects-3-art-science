@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/catalogus.css">
+    <link rel="stylesheet" href="../styles/discover.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
+    <title>Kunst in huis | Kunstwerken</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                    <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
+                <img class="navimg-overlay" src="../img/logo.png" alt="logo">
+                <div class="overlay-content">
+                    <div class="active"><a href="#"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
+                    </div>
+                    <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
+                    <div> <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a></div>
+                    <div> <a href="#"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe interesses</a>
+                    </div>
+                    <div> <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a></div>
+                    <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
+                    <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
+                    <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
+                    <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
+                </div>
+            </div>
+
+            <div class="nav-grid">
+                <div class="back-button">
+                </div>
+                <img src="../img/logo.png" alt=""> <span class="nav-button" onclick="openNav()">&#9776; </span>
+            </div>
+
+        </header>
+        <div class="container-artworks" id="artworks">
+            <div class="paragraph-photo-btn">
+                <div id="paragraph">
+                    <h1>Catalogus</h1>
+                    <div class="searchbar-group">
+                        <input type="search" class="searchbar" id="searchbar" placeholder='Bvb: Mijn hart luchten'>
+                        <button type="submit" class="searchbtn"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+            </div>
+            <div id="artworks-cards" class="cards">
+                <div class="card">
+                    <a href="suggestions_info.html">
+                        <img src="../img/art_1.png">
+                        <div class="card-text is-available">
+                            <h3>Mijn hart luchten</h3>
+                            <h4>Door Bas van den Hout</h4>
+                            <div class="availability">
+                                <p>Beschikbaar <i class="fa-solid fa-check"></i></p>
+                                <button class="button button-blue">Details <i
+                                        class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="suggestions_info.html">
+                        <img src="../img/art_1.png">
+                        <div class="card-text not-available">
+                            <h3>De stemmen van de zee</h3>
+                            <h4>Door Frans De Schilder</h4>
+                            <div class="availability">
+                                <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
+                                <button class="button button-blue">Details<i
+                                        class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="suggestions_info.html">
+                        <img src="../img/art_1.png">
+                        <div class="card-text not-available">
+                            <h3>De stemmen van de zee</h3>
+                            <h4>Door Frans De Schilder</h4>
+                            <div class="availability">
+                                <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
+                                <button class="button button-blue">Details<i
+                                        class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container-collections" id="collections">
+            <div class="paragraph-photo-btn">
+                <div id="paragraph">
+                    <h1>Hey (gebruiker)</h1>
+                    <p>Je kunstwerk swipes zullen je hieronder een aantal collecties van andere gebruikers weergeven die
+                        jou misschien interesseren.
+
+                    </p>
+                </div>
+                <div class="buttons">
+                    <button id="btn-artwork" class="button button-red"><a href="#">Kunstwerken</a></button> <button
+                        class="button button-red"><a href="#">Collecties</a></button></div>
+            </div>
+            <div id="collections-cards" class="cards">
+
+                <div class="card">
+                    <a href="suggestions_info.html">
+                        <div class="card-collecions-img">
+                            <img src="../img/collection_2.png">
+                            <img src="../img/collection_3.png">
+                            <img src="../img/collection_4.png">
+                            <img src="../img/collection_5.png">
+                        </div>
+                        <div class="card-text is-available">
+                            <h3>Abstracte beelden</h3>
+                            <h4>Door Barry Batsbak</h4>
+                            <div class="availability">
+                                <p>8 Kunstwerken </p>
+                                <button class="button button-blue">Details <i
+                                        class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+</body>
+
+</html>
