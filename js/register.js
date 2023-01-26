@@ -46,5 +46,4 @@ async function getData(url, method, data) {
     } catch (error) {
         console.log('catch', error)
     }
-
 }
