@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="../styles/discover.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+
+    <script src="../js/logout.js" defer></script>
+
+
     <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <title>Kunst in huis | Swipe Interesses</title>
+
 </head>
 
 <body>
@@ -21,6 +26,7 @@
                     <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
                 <img class="navimg-overlay" src="../img/logo.png" alt="logo">
                 <div class="overlay-content">
+
                     <div class="active"><a href="#"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
                     </div>
                     <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
@@ -31,7 +37,9 @@
                     <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
                     <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
                     <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
-                    <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
+                    <div class="log-out">   <a class="log-out" href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
+                        Uitloggen</a></div>
+
                 </div>
             </div>
 
@@ -45,7 +53,7 @@
         <div class="container-artworks" id="artworks">
             <div class="paragraph-photo-btn">
                 <div id="paragraph">
-                    <h1>Hey (gebruiker)</h1>
+                    <h1 id="greatUser-artworksInfo">Hey (gebruiker)</h1>
                     <p>Je kunstwerk swipes zullen je hieronder een groot aantal suggesties geven van kunst die jou
                         misschien
                         zullen interesseren.
@@ -70,40 +78,12 @@
                         </div>
                     </a>
                 </div>
-                <div class="card">
-                    <a href="suggestions_info.html">
-                        <img src="../img/art_1.png">
-                        <div class="card-text not-available">
-                            <h3>De stemmen van de zee</h3>
-                            <h4>Door Frans De Schilder</h4>
-                            <div class="availability">
-                                <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
-                                <button class="button button-blue">Details<i
-                                        class="fa-solid fa-circle-info"></i></button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="suggestions_info.html">
-                        <img src="../img/art_1.png">
-                        <div class="card-text not-available">
-                            <h3>De stemmen van de zee</h3>
-                            <h4>Door Frans De Schilder</h4>
-                            <div class="availability">
-                                <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
-                                <button class="button button-blue">Details<i
-                                        class="fa-solid fa-circle-info"></i></button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
         </div>
         <div class="container-collections" id="collections">
             <div class="paragraph-photo-btn">
                 <div id="paragraph">
-                    <h1>Hey (gebruiker)</h1>
+                    <h1 id="greatUser-collectionInfo">Hey (gebruiker)</h1>
                     <p>Je kunstwerk swipes zullen je hieronder een aantal collecties van andere gebruikers weergeven die
                         jou misschien interesseren.
 
@@ -114,7 +94,6 @@
                         class="button button-red"><a href="#">Collecties</a></button></div>
             </div>
             <div id="collections-cards" class="cards">
-
                 <div class="card">
                     <a href="suggestions_info.html">
                         <div class="card-collecions-img">
@@ -150,6 +129,8 @@
         document.getElementById("myNav").style.height = "0%";
     }
 </script>
+<script src="../js/auth.js"></script>
 <script src="../js/discover.js"></script>
+<script src="../js/discover_suggestions.js"></script>
 
 </html>

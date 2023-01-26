@@ -60,8 +60,11 @@ h1 {
     font-family: "Clearface ITC Pro";
     font-weight: 400;
     margin-bottom: 3%;
+    color: #3E3C4F;
 }
-
+p{
+    color: #3E3C4F;
+}
 img {
     width: 100%;
 }

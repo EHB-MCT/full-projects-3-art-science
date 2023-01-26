@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="../styles/nav.css">
     <link rel="stylesheet" href="../styles/suggestions_info.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+
+    <script src="../js/logout.js" defer></script>
+
+
     <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <title>Kunst in huis | Suggestions info</title>
+
 </head>
 
 <body>
@@ -21,6 +26,7 @@
                     <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
                 <img class="navimg-overlay" src="../img/logo.png" alt="logo">
                 <div class="overlay-content">
+
                     <div class="active"><a href="#"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
                     </div>
                     <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
@@ -31,7 +37,9 @@
                     <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
                     <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
                     <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
-                    <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
+                    <div class="log-out"> <a class="log-out" href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
+                        Uitloggen</a></div>
+
                 </div>
             </div>
 
@@ -72,7 +80,7 @@
             </div>
 
         </div>
-
+        <script src="../js/auth.js"></script>
 </body>
 <script>
     function openNav() {
