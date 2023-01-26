@@ -35,6 +35,8 @@
 .cards {
     width: 90%;
     margin: auto;
+    color: #3E3C4F;
+    margin-bottom: 7%;
 }
 
 .card:nth-child(3) {
@@ -56,12 +58,12 @@
 
 .is-available {
     padding: 3%;
-    border-left: 4px solid #00BC85;
+    border-left: 3px solid #00BC85;
 }
 
 .not-available {
     padding: 3%;
-    border-left: 9px solid #FC6256;
+    border-left: 3px solid #FC6256;
 }
 
 .availability {
