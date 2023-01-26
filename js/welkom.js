@@ -11,35 +11,3 @@ let text = textArr[number2];
 
 document.getElementById("welkom-text-var").innerHTML += `<h1 class="greenBackground-title">${text}</h1>`;
 document.getElementById("welkom-image-var").innerHTML += `<img src="${img}" alt="Random image">`;
-
-
-
-// function randomCombo() {
-//     const random = Math.floor(Math.random() * textArr.length);
-//     let text = textArr[random];
-//     let img = imgArr[random];
-//     console.log(random, text, img);
-
-
-//     document.getElementById("container").onload = function () {
-//         onloadfunc()
-//         console.log("onload")
-//     };
-
-//     function onloadfunc() {
-//         document.getElementById("welkom-image-var").innerHTML = `<img src=${img} alt="Random image">`
-//         document.getElementById("welkom-text-var").innerHTML = `<h1 class="greenBackground-title">${text}</h1>`
-//         console.log("test")
-//     };
-
-
-
-
-
-// }
-
-// randomCombo();
-
-/* <h1 class="greenBackground-title">adsasfdfdsfsdd</h1>
-<h1 class="greenBackground-title">adsadsdfs</h1>
-<h1 class="greenBackground-title">adsadsd</h1> */

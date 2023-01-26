@@ -1,11 +1,13 @@
 .person-name {
     position: absolute;
-    top: 32vw;
-    left: 7vw;
+    bottom: 25px;
+    left: 25px;
     font-family: "Clearface ITC Pro";
     font-weight: 300;
 }
-
+.profile-header{
+    position: relative;
+}
 .profile-banner {
     max-width: 100%;
     position: relative;
@@ -29,8 +31,8 @@
 .profile-img {
     position: absolute;
     max-width: 22vw;
-    right: 12vw;
-    top: 42vw;
+    right: 40px;
+    bottom: -20px;
 }
 
 .profile-grid {

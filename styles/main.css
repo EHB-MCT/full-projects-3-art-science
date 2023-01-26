@@ -1,6 +1,23 @@
-@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
-@import url(//db.onlinewebfonts.com/c/d9e4167d93282285853c2410eafc4abd?family=Clearface+ITC+Pro);
-@import "nav.css";
+@import url("//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book");
+@import url("//db.onlinewebfonts.com/c/d9e4167d93282285853c2410eafc4abd?family=Clearface+ITC+Pro");
+
+@font-face {
+    font-family: "Maison Neue Book";
+    src: url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.eot");
+    src: url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.svg#Maison Neue Book") format("svg");
+}
+
+@font-face {
+    font-family: "Clearface ITC Pro";
+    src: url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.eot");
+    src: url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.woff") format("woff"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.svg#Clearface ITC Pro") format("svg");
+}
+
+
 
 * {
     margin: 0;
@@ -86,6 +103,7 @@ img {
 .fa-xmark {
     color: #FC6256;
 }
-p{
-        line-height: 1.5em;
+
+p {
+    line-height: 1.5em;
 }

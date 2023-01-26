@@ -5,3 +5,42 @@ img {
 .nav-grid img {
     max-width: 18vh;
 }
+
+.welkom-block {
+    margin-top: 35% !important;
+}
+
+.style-text-block {
+    width: 90%;
+    margin-top: 5% !important;
+    margin: auto;
+}
+
+.buttons {
+    margin-top: 3% !important;
+}
+
+h3 {
+    display: inline-block;
+
+}
+
+.company-package-slider {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+}
+
+#multi {
+    border-bottom: 3px solid #FC6256;
+}
+
+.selection-text {
+    margin-bottom: 5%;
+}
+
+mark {
+    background: #FC6256;
+}
