@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/profile.css">
-
+    <link rel="stylesheet" href="../styles/mycollections.css">
     <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
     <title>Kunst in huis | Aanmelden</title>
 </head>
@@ -20,22 +20,22 @@
                         class="fa-sharp fa-solid fa-circle-xmark"></i></a>
                 <img class="navimg-overlay" src="../img/logo.png" alt="">
                 <div class="overlay-content">
-                    <div ><a href="discover_suggestions.html"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
+                    <div class="active"><a href="#"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
                     </div>
                     <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
                     <div> <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a></div>
-                    <div> <a href="interests.html"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe interesses</a>
+                    <div> <a href="#"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe interesses</a>
                     </div>
                     <div> <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a></div>
                     <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
                     <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
-                    <div class="active"> <a href="profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
+                    <div> <a href="#"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
                     <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
                 </div>
             </div>
 
             <div class="nav-grid">
-                <div class="back-button">
+                <div class="back-button"> <a href="profile.html"><i class="fa-solid fa-circle-left fa-xl"></i></a>
                 </div>
                 <img src="../img/logo.png" alt=""> <span class="nav-button" onclick="openNav()">&#9776; </span>
             </div>
@@ -43,7 +43,7 @@
 
 
 
-        <div class="profile-header">
+        <div>
             <img class="profile-banner" src="../img/bannerprofile.png" alt="">
 
             <div class="person-name ">
@@ -57,45 +57,30 @@
             </div>
         </div>
 
-        <div class="profile-grid">
-            <a href="swipe.html"><img src="../img/profileswipe.png" alt="Swipe icon"><br>
-                <h3>Swipe interesses</h3>
-            </a>
-            <button><img src="../img/profileedit.png" alt="Swipe icon"><br>
-                <h3>Profiel bewerken</h3>
-            </button>
-        </div>
-        <h1 class="profile-title">Mijn Collecties</h1>
-        <div class="profile-collections ">
-            <div class="card">
-                <a href="mycollection.html"><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
-            </div>
-            <div class="card">
-                <a href=""><img src="../img/art_1.png" alt=""></a>
-                <h3>Title Collecties</h3>
-                <p>Voornaam Achternaam</p>
+
+
+        <div class="collection-head">
+            <h1 class="collection-title">Mijn Collectie</h1>
+            <h3 class="collection-name">Stedelijke Kunst</h3>
+            <div class="switch-pos">
+                <label class="switch">
+                    <input type="checkbox" class="checkbox">
+                    <span class="toggle-thumb">
+                        <svg class="switch-icon" xmlns="http://www.w3.org/2000/svg" width="12.833" height="15.077"
+                            viewBox="0 0 12.833 15.077">
+                            <path id="Icon_awesome-lock" data-name="Icon awesome-lock"
+                                d="M11.458,6.6h-.687V4.476A4.422,4.422,0,0,0,6.417,0,4.422,4.422,0,0,0,2.062,4.476V6.6H1.375A1.4,1.4,0,0,0,0,8.01v5.654a1.4,1.4,0,0,0,1.375,1.413H11.458a1.4,1.4,0,0,0,1.375-1.413V8.01A1.4,1.4,0,0,0,11.458,6.6Zm-2.979,0H4.354V4.476a2.063,2.063,0,1,1,4.125,0Z"
+                                transform="translate(0 0)" fill="#3e3c4f" />
+                        </svg>
+                        <svg class="switch-icon" xmlns="http://www.w3.org/2000/svg" width="17.499" height="19.999"
+                            viewBox="0 0 17.499 19.999">
+                            <path id="Icon_awesome-unlock" data-name="Icon awesome-unlock"
+                                d="M15.624,10H5.937V5.972a2.813,2.813,0,1,1,5.625-.035v.625A.935.935,0,0,0,12.5,7.5h1.25a.935.935,0,0,0,.937-.937V5.937A5.937,5.937,0,1,0,2.812,6v4H1.875A1.875,1.875,0,0,0,0,11.875v6.25A1.875,1.875,0,0,0,1.875,20h13.75A1.875,1.875,0,0,0,17.5,18.124v-6.25A1.875,1.875,0,0,0,15.624,10Z"
+                                transform="translate(0 0)" fill="#3e3c4f" />
+                        </svg>
+                    </span>
+                </label>
+
             </div>
         </div>
 
