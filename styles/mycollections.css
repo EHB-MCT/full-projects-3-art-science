@@ -1,13 +1,14 @@
 h1,
 h3 {
-  font-family: "Clearface ITC Pro";
+
   color: #3E3C4F;
   margin-bottom: 0%;
 }
 
 .collection-head {
-  margin-top: 4%;
-  margin: 15px 15px;
+  margin: 0px 5vw;
+  margin-top: 5%;
+  margin-bottom: 4%;
 }
 
 .collection-title {
@@ -78,4 +79,40 @@ h3 {
   z-index: 1;
   width: 16px;
 
+}
+
+.delete-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #3E3C4F;
+  display: inline-flex;
+}
+
+.delete-span {
+  position: absolute;
+  right: 5vw;
+}
+
+.button-mycol {
+
+  height: 40px;
+  width: 40px;
+ 
+  border: 0;
+}
+
+.button-mycol i {
+  margin: 0 !important;
+  color: white;
+}
+
+.availability-mycoll {
+  display: grid;
+  grid-template-columns: 2fr 0.4fr 0.4fr;
+}
+
+.availability-mycoll p {
+  display: flex;
+  align-items: end;
 }
