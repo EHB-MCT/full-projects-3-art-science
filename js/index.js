@@ -32,3 +32,18 @@ function othersText() {
             "<p>Voor <strong><mark style='background: #CDD4FF!important' >vzw’s, non-profits en partnerships</mark> </strong>hanteren wij aangepaste tarieven. Behoor je tot één van deze drie? Neem dan snel contact op met kunstadviseur Mira voor een voorstel op maat.</p>"
     }
 }
+
+
+const textArr = ["De Nieuwe Garde <h1 class='greenBackground-title'> van Kunst</h1> <h1 class='greenBackground-title'>in Huis</h1>", "Lege muur?</h1> <h1 class='greenBackground-title'> Kunst</h1> <h1 class='greenBackground-title'>tehuur!", "Altijd het </h1> <h1 class='greenBackground-title'> perfecte kunstwerk</h1> <h1 class='greenBackground-title'> in huis"];
+const imgArr = ["img/WallArt1.jpg", "img/WallArt2.jpg", "img/WallArt3.jpg"];
+
+
+let number = Math.floor(Math.random() * 3);
+let number2 = Math.floor(Math.random() * 3);
+let img = imgArr[number];
+let text = textArr[number2];
+
+
+
+document.getElementById("welkom-text-var").innerHTML += `<h1 class="greenBackground-title">${text}</h1>`;
+document.getElementById("welkom-image-var").innerHTML += `<img src="${img}" alt="Random image">`;
