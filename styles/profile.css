@@ -5,13 +5,22 @@
     font-family: "Clearface ITC Pro";
     font-weight: 300;
 }
-.profile-header{
+
+.profile-header {
     position: relative;
 }
+
 .profile-banner {
     max-width: 100%;
     position: relative;
 
+}
+
+
+.card img {
+
+    object-fit: contain;
+    height: 150px;
 }
 
 .person-name h1 {

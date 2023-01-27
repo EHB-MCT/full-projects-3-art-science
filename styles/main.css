@@ -62,9 +62,11 @@ h1 {
     margin-bottom: 3%;
     color: #3E3C4F;
 }
-p{
+
+p {
     color: #3E3C4F;
 }
+
 img {
     width: 100%;
 }
@@ -97,8 +99,9 @@ img {
 .back-button {
     padding-top: 10%;
     margin-left: 15%;
-}
+    margin-top: 5%;
 
+}
 .fa-check {
     color: #00BC85;
 }

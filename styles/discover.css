@@ -91,6 +91,12 @@
     grid-gap: 4%;
 }
 
+
+.card-collecions-img img {
+    height: 175px;
+    object-fit: cover;
+}
+
 .container-collections .is-available {
     margin-top: 5%;
 }
@@ -102,4 +108,16 @@
 
 #multi {
     background-color: 3px solid #FC6256;
+}
+
+
+.fa-circle-exclamation {
+    transform: translateX(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    text-align: center;
+    font-size: 50vw;
+    color: #d4d3cf;
 }
