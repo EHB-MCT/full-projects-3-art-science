@@ -28,8 +28,8 @@ A webapp where users can look at the whole catalog of Kunst In Huis. They can al
 
 ## Setup
 Server runs with MongoDB.
-E-mail: ehbkuns􀆟nhuis@gmail.com 
-Password: kuns􀆟nhuis1234
+E-mail: ehbkunstnhuis@gmail.com 
+Password: kunstnhuis1234
 
 Node required for this step: https://nodejs.org/en/download/
 Download the backend file and create a local server. To create a server that runs locally. Open the Back End folder in Visual Studio Code and open a terminal. Use the command “nodemon index.js” and press enter. Now the server runs locally and all the func􀆟ons of the webapp will work like the login/register system.
