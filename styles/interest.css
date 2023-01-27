@@ -1,7 +1,3 @@
-body {
-    height: 100vh;
-}
-
 .paragraph-photo-btn {
     width: 90%;
     margin: auto;
@@ -16,12 +12,4 @@ img {
     margin-top: 25px;
     scale: 1.2;
     margin-bottom: 50px;
-}
-
-
-.button-red {
-    left: 50%;
-    bottom: 5vh;
-    position: fixed;
-    background-color: blue;
 }
