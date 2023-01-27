@@ -1,0 +1,13 @@
+.searchbtn {
+    background-color: none;
+    border: none;
+}
+
+.searchbar {
+    background-color: #f1f0eb;
+    border: none;
+}
+
+.searchbar-group {
+    border: 1px black solid;
+}

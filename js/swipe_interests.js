@@ -6,7 +6,15 @@ document.getElementById("log-out").addEventListener("click", e => {
     location.replace('login.html')
 })
 
+/*loading animation*/
+document.getElementById("alert-loading").style.display = "block";
+const loader = document.querySelector("#loading");
+displayLoading(loader);
 
+function displayLoading(loader) {
+    loader.classList.add("display");
+}
+/* loading animation END*/
 
 fetch("../js/artworksData.json")
     .then(res => res.json())
@@ -132,6 +140,7 @@ function popTopArtwork(artInterestBoolean) {
 function countDoublesInCategoriesArray(dislikedCategories, likedCategories) {
     var dislikeCategoriesCounter = dislikedCategories.reduce((count, item) => (count[item] = count[item] + 1 || -1, count), {});
     var likedCategoriesCounter = likedCategories.reduce((count, item) => (count[item] = count[item] + 1 || 1, count), {});
+
     function sumObjectsByKey(...objs) {
         return objs.reduce((a, b) => {
             for (let k in b) {
@@ -202,12 +211,14 @@ async function getRandomArtworks(data) {
                 artworksToSwipe.push(artwork)
                 existingArtworksCounter++;
             }
+
         } catch {
-            console.log(artwork.identificationNumber, 'Error does not exist');
+
         }
     }
     renderArtworkCards(artworksToSwipe);
 }
+
 function checkIfImageExists(url) {
     return new Promise((resolve, reject) => {
         let img = new Image()
@@ -218,6 +229,12 @@ function checkIfImageExists(url) {
 }
 
 function renderArtworkCards(artworksToSwipe) {
+
+    document.getElementById("alert-loading").style.display = "none";
+    const loader = document.querySelector("#loading");
+    loader.classList.remove("display");
+
+
 
     let htmlString = "";
     artworksToSwipe.forEach(artwork => {
@@ -230,7 +247,9 @@ function renderArtworkCards(artworksToSwipe) {
     });
     let container = document.getElementById("cardsWrapper");
     container.insertAdjacentHTML("beforeend", htmlString);
+    initCards();
 }
+
 function initCards(card, index) {
     var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
     newCards.forEach(function (card, index) {
@@ -241,7 +260,7 @@ function initCards(card, index) {
 
     tinderContainer.classList.add('loaded');
 }
-initCards();
+// initCards();
 allCards.forEach(function (el) {
     var hammertime = new Hammer(el);
 
@@ -280,6 +299,7 @@ allCards.forEach(function (el) {
         }
     });
 });
+
 function createButtonListener(love) {
     return function (event) {
         var cards = document.querySelectorAll('.tinder--card:not(.removed)');
