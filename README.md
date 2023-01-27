@@ -24,10 +24,17 @@ Op basis van eerdere uitlenen, zouden we onze klanten in hun klantenprofiel auto
 We zouden de creatie van art walls willen ontwikkelen, waar mensen onze kunstwerken die ze leuk vinden kunnen opslaan, een art wall die hun inspiratie biedt, die voorbeelden toont van inspirerende interieurs, kunstenaars, ateliers, creatieve projecten, waar ze kunnen inschrijven voor onze publiekswerkingsactiviteiten… een soort van pinterest die volledig gebaseerd is op onze collectie, op profielen van klanten, op inspiratie en op een totaalpakket, dus meer dan enkel het pinnen of favoriet maken van kunstwerken uit onze collectie. Deze art walls moeten kunnen gemaakt worden zowel door klanten als niet-klanten, maar wel altijd rechtstreeks in verband staan met onze werking en onze collectie.
 
 ## Explanation of concept
-
+A webapp where users can look at the whole catalog of Kunst In Huis. They can also participate in a little tinder-esque swipe game where they see 30 artworks. When they like the artwork certain artibutes of this artwork will be saved and this will result in suggestions based on what the user likes. From here they will be able to look at more info of these artworks like the creator, name and availability. 
 
 ## Setup
+Server runs with MongoDB.
+E-mail: ehbkuns􀆟nhuis@gmail.com 
+Password: kuns􀆟nhuis1234
+
+Node required for this step: https://nodejs.org/en/download/
+Download the backend file and create a local server. To create a server that runs locally. Open the Back End folder in Visual Studio Code and open a terminal. Use the command “nodemon index.js” and press enter. Now the server runs locally and all the func􀆟ons of the webapp will work like the login/register system.
 
 ## Source list
+
 
 ## ...
