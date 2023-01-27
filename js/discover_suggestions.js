@@ -3,7 +3,36 @@ getAllData();
 async function getAllData() {
     const jsonData = await getData("../js/artworksData.json");
     const userInterest = await getData(`http://localhost:3000/getUserInterest?id=${userId.userId}`);
-    filterOnJson(jsonData, userInterest);
+    if (typeof userInterest === 'undefined') {
+        console.log("geen data gevonden")
+
+        let htmlString = "";
+
+   
+    
+        htmlString = ` <div class="paragraph-photo-btn">
+        <div id="paragraph">
+            <h1 id="greatUser-artworksInfo">Whoops...</h1>
+            <p>Je krijgt nog geen suggesties te zien! Hiervoor moet je eerst kunstwerken swipen om jouw eigen interesse te kunnen bepalen.
+            </p>
+        </div>
+        <div class="buttons">
+            <button class="button button-red"><a href="interests.html">Swipe Interesses</a></button>
+        </div>
+        <i class="fa-solid fa-circle-exclamation"></i>
+    </div>
+       
+       `;
+    let container = document.getElementById("artworks");
+    container.innerHTML =htmlString;
+    // container.insertAdjacentHTML("afterbegin", htmlString);
+
+
+      }else{
+        filterOnJson(jsonData, userInterest);
+      }
+   
+   
 }
 
 async function getData(url) {
@@ -68,7 +97,7 @@ function initSuggestions(filter) {
     renderSuggestions(artworksToRender);
 }
 function renderSuggestions(artworksToRender) {
-
+    console.log(artworksToRender)
 
     let htmlString = "";
 
@@ -88,8 +117,9 @@ function renderSuggestions(artworksToRender) {
 
         }
         htmlString += `
-        <div class="card">
-        <a href="suggestions_info.html">
+        <div class="card" id="${item.identificationNumber}" onClick="reply_click(this.id)">
+       
+        
             <img src="${item.imageUrl}">
             <div class="card-text ${availableStripe}">
                 <h3>${item.title}</h3>
@@ -100,7 +130,8 @@ function renderSuggestions(artworksToRender) {
                             class="fa-solid fa-circle-info"></i></button>
                 </div>
             </div>
-        </a>
+       
+            
     </div>`;
     });
     let container = document.getElementById("artworks-cards");

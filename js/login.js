@@ -1,3 +1,6 @@
+let firstTimeHere = sessionStorage.getItem("firstTimeHere");
+console.log(firstTimeHere)
+
 document.getElementById("btn-login").addEventListener("click", e => {
     let user = {};
     user.email = document.getElementById("email").value;
@@ -5,7 +8,15 @@ document.getElementById("btn-login").addEventListener("click", e => {
     getData("http://localhost:3000/login", "POST", user).then(data => {
         if (data.status) {
             sessionStorage.setItem("user", JSON.stringify(data.data))
-            location.replace('profile.html')
+            
+            if(firstTimeHere){
+                firstTimeHere = false;
+             
+                location.replace('interests.html')
+            }else {
+                location.replace('profile.html')
+              
+            }
         } else {
             document.getElementById("messageLogin").innerHTML = data.message;
             document.getElementById("messageLogin").style.color = "#FC6256";

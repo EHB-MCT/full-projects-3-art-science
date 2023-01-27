@@ -75,8 +75,10 @@ function prepareInterestsDataToSend(ColorsInterest, CategoriesInterest) {
         });
         return await resp.json();
     }
-
-    location.replace("discover_suggestions.html");
+    setTimeout(function () {
+        location.replace("discover_suggestions.html");
+    }, 500)
+    
 
 
 }

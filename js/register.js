@@ -1,3 +1,6 @@
+let firstTimeHere = true;
+
+
 document.getElementById("btn-register").addEventListener("click", e => {
     let newUser = {};
     newUser.firstname = document.getElementById("firstname").value;
@@ -5,6 +8,7 @@ document.getElementById("btn-register").addEventListener("click", e => {
     newUser.email = document.getElementById("email").value;
     newUser.password = document.getElementById("password").value;
     newUser.confirmPassword = document.getElementById("confirmPassword").value;
+    
 
 
     if (newUser.password == newUser.confirmPassword) {
@@ -16,6 +20,8 @@ document.getElementById("btn-register").addEventListener("click", e => {
                 setTimeout(function () {
                     location.replace('login.html')
                 }, 2500)
+                firstTimeHere = true;
+                sessionStorage.setItem("firstTimeHere", firstTimeHere);
             } else {
                 document.getElementById("messageRegister").innerHTML = data.message;
                 document.getElementById("messageRegister").style.display = "block";
