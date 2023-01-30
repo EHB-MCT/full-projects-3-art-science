@@ -59,3 +59,8 @@ aside {
     display: none;
     z-index: 1;
 }
+
+.collection-group div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
