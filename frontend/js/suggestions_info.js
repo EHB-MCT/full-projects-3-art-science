@@ -2,10 +2,10 @@
 
 fetch("../js/artworksData.json")
     .then(res => res.json())
-    .then(data =>searchInJson(data))
+    .then(data => searchInJson(data))
 
-function searchInJson(jsonData){
-   
+function searchInJson(jsonData) {
+
     const artworkID = sessionStorage.getItem("artworkID");
     console.log(artworkID)
 
@@ -17,7 +17,7 @@ function searchInJson(jsonData){
 
 }
 
-function artworkData(artworkFound){
+function artworkData(artworkFound) {
     let artworkToRender = artworkFound[0];
     console.log(artworkToRender)
 
@@ -29,28 +29,28 @@ function artworkData(artworkFound){
         input = input.substr(4);
     }
     let availabilityString = "";
-    
+
     switch (artworkToRender['Zichtbaar op site']) {
         case "Ja":
             availabilityString = `Beschibaar <i class="fa-solid fa-check"></i>`;
-           
+
             break;
         case "Nee":
             availabilityString = `Niet Beschikbaar <i class="fa-solid fa-xmark"></i>`;
-           
+
             break;
         default:
 
     }
-   
+
 
 
     let htmlString = "";
 
-   
-       
-     
-        htmlString += `
+
+
+
+    htmlString += `
         <div class="paragraph">
                 <h1 class="greenBackground-title">${artworkToRender.Titel}</h1>
                 <p>Door ${artworkToRender.Kunstenaar}</p>
@@ -73,11 +73,50 @@ function artworkData(artworkFound){
                     </main>
                     <div class="button">
                         <button class="button button-red"><a href="#">Nu reserveren</a></button>
-                        <button class="button button-blue"><a href="#">Toevoegen aan collectie</a></button>
+                        <button class="button button-blue" id="popupBtn"><a href="#">Toevoegen aan collectie</a></button>
                     </div>
                 </div>
             </div>
        `;
     let container = document.getElementById("artworkDetails");
     container.insertAdjacentHTML("afterbegin", htmlString);
+
+
+    document.getElementById("popupBtn").addEventListener('click', openPopup);
+
+
+    function openPopup() {
+        document.getElementById("darker-popup").style.display = "block";
+        let htmlStringTwo = "";
+        htmlStringTwo += `<aside>
+        <div>
+            <p id="close-popupBtn">x</p>
+            <script></script>
+            <h1> test </h1>
+            <div>
+                <p>random text<p/>
+            </div>
+            <div>
+                <p>random text<p/>
+            </div>
+            <div>
+                <p>random text<p/>
+            </div>
+            <div>
+                <p>random text<p/>
+            </div>
+        </div>
+        </aside>`
+
+        document.getElementById("collection-add").innerHTML = htmlStringTwo;
+        document.getElementById("close-popupBtn").addEventListener('click', closePopup);
+
+        function closePopup() {
+            document.getElementById("darker-popup").style.display = "none";
+            let htmlStringTwo = "";
+            document.getElementById("collection-add").innerHTML = htmlStringTwo
+        }
+    }
+
+
 }
