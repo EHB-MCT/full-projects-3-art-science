@@ -39,8 +39,9 @@
 .collection-add {
     position: absolute;
     width: 100%;
-    bottom: 0%;
-
+    top: 90%;
+    display: flex;
+    flex-direction: column
 }
 
 aside {
@@ -48,6 +49,11 @@ aside {
     padding: 5%;
     position: sticky;
     z-index: 1;
+    padding-top: 10%;
+    padding-bottom: 15%;
+    margin-top: auto;
+
+
 }
 
 .darker-popup {
