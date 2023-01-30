@@ -24,66 +24,79 @@ h3 {
   height: 225px;
 }
 
-
-
 .switch {
-  display: inline-block;
-  width: 58px;
-  height: 34px;
   position: relative;
-  scale: 75%;
-}
-
-.toggle-thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3E3C4F;
-  border-radius: 40px;
-  cursor: pointer;
-}
-
-.toggle-thumb:before {
-  content: "";
-  height: 26px;
-  width: 26px;
-  position: absolute;
-  left: 4px;
-  bottom: 4px;
-  border-radius: 50%;
-  background-color: white;
-  transition: .4s all ease;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 
-
-.checkbox {
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.checkbox:checked+.toggle-thumb:before {
-  transform: translateX(26px);
-  background-color: white;
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00BC85;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #FC6256;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #FC6256;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.lock-collection i  {
+  position: absolute;
+  left: -25%;
+  color: #3E3C4F;
+}
+
 
 .switch-pos {
   float: right;
-  top: -6vh;
+  top: -8vh;
   position: relative;
-}
-
-.switch-icon {
-  margin: 0 auto;
-  z-index: 1;
-  width: 16px;
-
 }
 
 .delete-button {
@@ -92,6 +105,7 @@ h3 {
   cursor: pointer;
   color: #3E3C4F;
   display: inline-flex;
+  margin-top: 20px;
 }
 
 .delete-span {
