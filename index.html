@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/nav.css">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/welkom.css">
+    <link rel="stylesheet" href="frontend/styles/main.css">
+    <link rel="stylesheet" href="frontend/styles/nav.css">
+    <link rel="stylesheet" href="frontend/styles/index.css">
+    <link rel="stylesheet" href="frontend/styles/welkom.css">
     <script src="https://kit.fontawesome.com/fbf519a042.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="icon" type="image/x-icon" href="frontend/img/logo.png">
     <title>Kunst in huis</title>
 </head>
 
@@ -19,15 +19,16 @@
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
                 <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
-            <img class="navimg-overlay" src="img/logo.png" alt="logo">
+            <img class="navimg-overlay" src="frontend/img/logo.png" alt="logo">
             <div class="overlay-content">
 
-                <div class="active"> <a href="pages/discover_suggestions.html"> <i
+                <div class="active"> <a href="frontend/pages/discover_suggestions.html"> <i
                             class=" fa-sharp fa-solid fa-compass"></i>
                         Ontdek suggesties</a></div>
                 <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
                 <div> <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a></div>
-                <div> <a href="./pages/interests.html"> <img class="iconswipe" src="img/Swipeicon.png" alt="swipe icon">
+                <div> <a href="frontend/pages/interests.html"> <img class="iconswipe" src="frontend/img/Swipeicon.png"
+                            alt="swipe icon">
                         Swipe
                         interesses</a></div>
                 <div> <a href="https://kunstinhuis.be/agenda/"><i class="fa-solid fa-calendar-days"></i> Agenda</a>
@@ -35,7 +36,8 @@
                 <div><a href="https://kunstinhuis.be/kunstcheque/"><i class="fa-solid fa-gift"></i> Kunstcheque</a>
                 </div>
                 <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
-                <div> <a href="pages/profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
+                <div> <a href="frontend/pages/profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a>
+                </div>
                 <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
             </div>
         </div>
@@ -43,7 +45,7 @@
         <div class="nav-grid">
             <div class="back-button">
             </div>
-            <a href="index.html"> <img src="img/logo.png" alt="logo"></a> <span class="nav-button"
+            <a href="index.html"> <img src="frontend/img/logo.png" alt="logo"></a> <span class="nav-button"
                 onclick="openNav()">&#9776; </span>
 
 
@@ -67,7 +69,7 @@
             elk werk ook aangekocht worden. </p>
     </div>
     <div class="buttons">
-        <button class="button button-red"> <a href="./pages/welkom.html">Ontdek jouw stijl!</a></button>
+        <button class="button button-red"> <a href="frontend/pages/welkom.html">Ontdek jouw stijl!</a></button>
     </div>
 
     <div class="style-text-block">
@@ -99,6 +101,5 @@
         document.getElementById("myNav").style.height = "0%";
     }
 </script>
-<script src="js/index.js" defer></script>
-
+<script src="frontend/js/index.js" defer></script>
 </html>
