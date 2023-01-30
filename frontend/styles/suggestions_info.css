@@ -64,3 +64,20 @@ aside {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.succesMessage {
+    background-color: #00BC85;
+    /*Rood (#FC6256) als het niet toegevoegd is?*/
+    position: absolute;
+
+}
+
+.succesMessage p {
+    display: none;
+    /*Moet flex worden*/
+    color: white;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    padding: 5%;
+}
