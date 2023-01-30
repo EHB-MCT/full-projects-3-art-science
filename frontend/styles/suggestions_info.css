@@ -81,3 +81,9 @@ aside {
     justify-content: center;
     padding: 5%;
 }
+
+.dimensions main a {
+    color: white;
+    background-color: #00BC85;
+    text-align: center;
+}
