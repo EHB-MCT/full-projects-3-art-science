@@ -27,7 +27,7 @@ body {
 }
 
 .overlay a {
-  padding: 7%;
+  padding: 6%;
   text-decoration: none;
   font-size: 18px;
   color: #F1F0EB;
@@ -79,13 +79,13 @@ body {
 
 .nav-grid {
   display: grid;
-  max-height: 7vh;
+  max-height: 8vh;
   background-color: #3E3C4F;
 }
 
 .nav-grid img {
   display: block;
-  max-width: 10vh;
+  max-width: 11vh;
   margin: 0 auto;
   z-index: 1;
 
@@ -93,7 +93,7 @@ body {
 
 .navimg-overlay {
   display: block;
-  max-width: 10vh;
+  max-width: 11vh;
   margin: 0 auto;
 }
 
@@ -112,5 +112,5 @@ body {
 }
 
 .overlay-content>div {
-  height: 9.4vh;
+  height: 9vh;
 }
