@@ -2,14 +2,14 @@ let userId = JSON.parse(sessionStorage.getItem('user'));
 getAllData();
 async function getAllData() {
     const jsonData = await getData("../js/artworksData.json");
-    const userInterest = await getData(`http://localhost:3000/getUserInterest?id=${userId.userId}`);
+    const userInterest = await getData(`https://kunstinhuis-6ha5.onrender.com/getUserInterest?id=${userId.userId}`);
     if (typeof userInterest === 'undefined') {
         console.log("geen data gevonden")
 
         let htmlString = "";
 
-   
-    
+
+
         htmlString = ` <div class="paragraph-photo-btn">
         <div id="paragraph">
             <h1 id="greatUser-artworksInfo">Whoops...</h1>
@@ -23,16 +23,16 @@ async function getAllData() {
     </div>
        
        `;
-    let container = document.getElementById("artworks");
-    container.innerHTML =htmlString;
-    // container.insertAdjacentHTML("afterbegin", htmlString);
+        let container = document.getElementById("artworks");
+        container.innerHTML = htmlString;
+        // container.insertAdjacentHTML("afterbegin", htmlString);
 
 
-      }else{
+    } else {
         filterOnJson(jsonData, userInterest);
-      }
-   
-   
+    }
+
+
 }
 
 async function getData(url) {

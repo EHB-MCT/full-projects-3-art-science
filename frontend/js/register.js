@@ -8,11 +8,11 @@ document.getElementById("btn-register").addEventListener("click", e => {
     newUser.email = document.getElementById("email").value;
     newUser.password = document.getElementById("password").value;
     newUser.confirmPassword = document.getElementById("confirmPassword").value;
-    
+
 
 
     if (newUser.password == newUser.confirmPassword) {
-        getData("http://localhost:3000/register", "POST", newUser).then(data => {
+        getData("https://kunstinhuis-6ha5.onrender.com/register", "POST", newUser).then(data => {
             if (data.status) {
                 document.getElementById("messageRegister").style.display = "block";
                 document.getElementById("messageRegister").style.color = "#00BC85";
