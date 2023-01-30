@@ -167,6 +167,17 @@
         }
 
     }
+
+    // This is the _id of the artwork, it will be used to fetch the details/information of the specific artwork that the user clicked on. 
+    function reply_click_collection(clicked_id) {
+        if (clicked_id) {
+
+            console.log(clicked_id);
+            sessionStorage.setItem("collectionID", clicked_id);
+            window.location.replace("othercollection.html", clicked_id);
+        }
+
+    }
 </script>
 <script src="../js/auth.js"></script>
 <script src="../js/discover.js"></script>

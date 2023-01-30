@@ -24,46 +24,49 @@ function domArtworks() {
 }
 
 async function renderCollections(data) {
-    console.log(data)
+  
     let htmlString = "";
+    console.log(data);
     data.forEach(collection => {
+
         let artworksWithUnderscore =[];
-        collection.listOfArtworks.forEach(artworkID => {
-            var input = artworkID;
-            var result =[];
-            while (input.length){
-                result.push(input.substr(0,4));
-                input = input.substr(4);
-            }
-            artworksWithUnderscore.push(`https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg`);
-        })
-        console.log(artworksWithUnderscore);
-        getData(`http://localhost:3000/getUserName?id=${collection.userId}`).then(user => {
-            console.log(collection.collectionName)
-            htmlString += `           
-        <div class="card" id="${collection.collectionId}">
-            <a href="othercollection.html">
+            collection.listOfArtworks.forEach(artworkID => {
+                var input = artworkID;
+                var result =[];
+                while (input.length){
+                    result.push(input.substr(0,4));
+                    input = input.substr(4);
+                }
+                artworksWithUnderscore.push(`https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg`);
+            })
+            console.log(artworksWithUnderscore);
+       
+       
+           htmlString += `           
+        <div class="card" id="${collection.collectionId}" onClick="reply_click_collection(this.id)">
+          
                 <div class="card-collecions-img">
-                    <img src=${artworksWithUnderscore[0]}>
-                    <img src=${artworksWithUnderscore[1]}>
-                    <img src=${artworksWithUnderscore[2]}>
-                    <img src=${artworksWithUnderscore[3]}>
+                    <img src=${artworksWithUnderscore[0]} loading="lazy">
+                    <img src=${artworksWithUnderscore[1]} loading="lazy">
+                    <img src=${artworksWithUnderscore[2]} loading="lazy">
+                    <img src=${artworksWithUnderscore[3]} loading="lazy">
                 </div>
                 <div class="card-text is-available">
                     <h3>${collection.collectionName}</h3>
-                    <h4>Door ${user.data.firstname} ${user.data.lastname}</h4>
+                    <h4>Door ${collection.userName}</h4>
                     <div class="availability">
                         <p>${collection.listOfArtworks.length} Kunstwerken </p>
                         <button class="button button-blue">Details <i
                                 class="fa-solid fa-circle-info"></i></button>
                     </div>
                 </div>
-            </a>
+         
         </div>`;
+        // htmlString = htmlString + newHtml;
             let container = document.getElementById("collections-cards");
             // container.insertAdjacentHTML("afterbegin", htmlString);
-            container.innerHTML = htmlString
-        });
+            container.innerHTML = htmlString;
+       
     })
 }
 
