@@ -5,17 +5,17 @@ document.getElementById("btn-login").addEventListener("click", e => {
     let user = {};
     user.email = document.getElementById("email").value;
     user.password = document.getElementById("password").value;
-    getData("http://localhost:3000/login", "POST", user).then(data => {
+    getData("https://kunstinhuis-6ha5.onrender.com/login", "POST", user).then(data => {
         if (data.status) {
             sessionStorage.setItem("user", JSON.stringify(data.data))
-            
-            if(firstTimeHere){
+
+            if (firstTimeHere) {
                 firstTimeHere = false;
-             
+
                 location.replace('interests.html')
-            }else {
+            } else {
                 location.replace('profile.html')
-              
+
             }
         } else {
             document.getElementById("messageLogin").innerHTML = data.message;
