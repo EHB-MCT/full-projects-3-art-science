@@ -195,9 +195,9 @@ app.post("/saveCollection", async (req, res) => {
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const insertCollection = await colli.insertOne(newCollection);
 
-        res.status(201).send({
-            status: false,
-            message: "Gelieve alle velden invullen"
+        res.status(200).send({
+            status: true,
+            message: "Collectie is bewaard!"
         });
     }
     catch (error) {
@@ -249,6 +249,49 @@ app.delete("/deleteCollection", async (req, res) => {
             message: "De collectie is succesvol verwijderd"
         });
     } catch (error) {
+        res.status(500).send({
+            error: 'Something went wrong!',
+            value: error
+        });
+    } finally {
+        await client.close();
+    }
+})
+
+
+app.get("/getAllCollections", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("artworkCollections")
+
+        const find = await colli.find({}).toArray();
+
+        res.status(200).send(find);
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            error: 'Something went wrong!',
+            value: error
+        });
+    } finally {
+        await client.close();
+    }
+})
+app.get("/getUserName", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("users")
+        const query = { userId: req.query.id };
+        const find = await colli.findOne(query);
+        res.status(200).send({
+            status: true,
+            data: {
+                firstname: find.firstname,
+                lastname: find.lastname,
+            }
+        });
+    } catch (error) {
+        console.log(error)
         res.status(500).send({
             error: 'Something went wrong!',
             value: error
