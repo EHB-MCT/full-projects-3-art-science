@@ -47,13 +47,11 @@
 aside {
     background-color: white;
     padding: 5%;
-    position: sticky;
+    position: absolute;
+    width: 100%;
     z-index: 1;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    margin-top: auto;
-
-
+    top: 50%;
+    transform: translateY(-60%);
 }
 
 .darker-popup {
