@@ -1,1 +1,0 @@
-Bekijk deze demo in mobile versie, niet in desktop versie.

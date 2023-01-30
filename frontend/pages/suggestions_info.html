@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/suggestions_info.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <script src="https://kit.fontawesome.com/3a750d1e29.js" crossorigin="anonymous"></script>
+    <script src="../js/suggestions_info.js" defer></script>
+    <script src="../js/logout.js" defer></script>
+
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
+
+    <title>Kunst in huis | Suggestions info</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                    <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
+                <img class="navimg-overlay" src="../img/logo.png" alt="logo">
+                <div class="overlay-content">
+
+
+
+                    <div class="active"><a href="#"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek
+                            suggesties</a>
+                    </div>
+                    <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
+                    <div> <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a></div>
+                    <div> <a href="interests.html"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe
+                            interesses</a>
+                    </div>
+                    <div> <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a></div>
+                    <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
+                    <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
+                    <div> <a href="profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
+                    <div class="log-out"> <a class="log-out" href="#" id="log-out"><i
+                                class="fa-solid fa-right-from-bracket"></i>
+                            Uitloggen</a></div>
+
+                </div>
+            </div>
+
+            <div class="nav-grid">
+                <div class="back-button">
+                    <a href="discover_suggestions.html"><i class="fa-solid fa-circle-left fa-xl"></i></a>
+                </div>
+                <img src="../img/logo.png" alt="logo"> <span class="nav-button" onclick="openNav()">&#9776; </span>
+
+
+            </div>
+        </header>
+        <div class="darker-popup" id="darker-popup"> </div>
+        <div class="paragraph-everything" id="artworkDetails">
+        </div>
+
+    </div>
+    <div class="collection-add" id="collection-add">
+    </div>
+
+
+
+
+</body>
+
+
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+
+</html>
