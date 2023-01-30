@@ -97,7 +97,7 @@ function initSuggestions(filter) {
     renderSuggestions(artworksToRender);
 }
 function renderSuggestions(artworksToRender) {
-    console.log(artworksToRender)
+    // console.log(artworksToRender)
 
     let htmlString = "";
 
