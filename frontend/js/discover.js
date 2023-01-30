@@ -1,5 +1,3 @@
-
-
 const btnArtworks = document.getElementById("btn-artwork");
 const btnCollection = document.getElementById("btn-collection");
 
@@ -67,6 +65,5 @@ async function getData(url) {
         });
         const json = await resp.json();
         return json
-    } catch (error) {
-    }
+    } catch (error) {}
 }

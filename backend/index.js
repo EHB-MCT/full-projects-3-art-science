@@ -1,11 +1,18 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const { MongoClient } = require('mongodb')
-const { v4: uuidv4, validate: uuidValidate } = require('uuid');
+const {
+    MongoClient
+} = require('mongodb')
+const {
+    v4: uuidv4,
+    validate: uuidValidate
+} = require('uuid');
 require("dotenv").config()
 const client = new MongoClient(process.env.FINAL_URL)
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+    extended: false
+}));
 app.use(cors())
 app.use(express.json())
 
@@ -13,8 +20,8 @@ app.listen(3000);
 console.log("app running at http://localhost:3000");
 
 app.post("/register", async (req, res) => {
-    if (!req.body.firstname || !req.body.lastname || !req.body.email
-        || !req.body.password || !req.body.confirmPassword) {
+    if (!req.body.firstname || !req.body.lastname || !req.body.email ||
+        !req.body.password || !req.body.confirmPassword) {
         res.status(401).send({
             status: false,
             message: "Gelieve alle velden invullen"
@@ -32,7 +39,9 @@ app.post("/register", async (req, res) => {
             userId: uuidv4()
         }
         const colli = client.db("kunstinhuis").collection("users")
-        const query = { email: newUser.email };
+        const query = {
+            email: newUser.email
+        };
         const user = await colli.findOne(query)
         if (user) {
             res.status(401).send({
@@ -76,7 +85,9 @@ app.post("/login", async (req, res) => {
             password: req.body.password
         }
         const colli = client.db("kunstinhuis").collection("users")
-        const query = { email: loginuser.email };
+        const query = {
+            email: loginuser.email
+        };
         const user = await colli.findOne(query)
 
         if (user) {
@@ -123,7 +134,9 @@ app.post("/saveUserInterest", async (req, res) => {
     try {
         await client.connect();
         const colliUserId = client.db("kunstinhuis").collection("users")
-        const query = { userId: req.query.id };
+        const query = {
+            userId: req.query.id
+        };
         const userId = await colliUserId.findOne(query);
 
         const interest = {
@@ -156,7 +169,9 @@ app.get("/getUserInterest", async (req, res) => {
     try {
         await client.connect();
         const colli = client.db("kunstinhuis").collection("userInterest")
-        const query = { userId: req.query.id };
+        const query = {
+            userId: req.query.id
+        };
         const find = await colli.findOne(query);
 
         res.status(200).send(find);
@@ -182,7 +197,9 @@ app.post("/saveCollection", async (req, res) => {
     try {
         await client.connect();
         const colliUserId = client.db("kunstinhuis").collection("users")
-        const query = { userId: req.query.id };
+        const query = {
+            userId: req.query.id
+        };
         const userId = await colliUserId.findOne(query);
 
         let newCollection = {
@@ -195,12 +212,11 @@ app.post("/saveCollection", async (req, res) => {
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const insertCollection = await colli.insertOne(newCollection);
 
-        res.status(200).send({
-            status: true,
-            message: "Collectie is bewaard!"
+        res.status(201).send({
+            status: false,
+            message: "Gelieve alle velden invullen"
         });
-    }
-    catch (error) {
+    } catch (error) {
         res.status(500).send({
             error: "Something went wrong",
             value: error
@@ -215,7 +231,9 @@ app.patch("/updateCollection", async (req, res) => {
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const database = client.db("kunstinhuis");
         const movies = database.collection("artworkCollections");
-        const filter = { collectionId: req.query.id };
+        const filter = {
+            collectionId: req.query.id
+        };
         const updateDoc = {
             $set: {
                 collectionName: req.body.collectionName,
@@ -242,56 +260,15 @@ app.delete("/deleteCollection", async (req, res) => {
     try {
         await client.connect();
         const colli = client.db("kunstinhuis").collection("artworkCollections")
-        const query = { collectionId: req.query.id };
+        const query = {
+            collectionId: req.query.id
+        };
         const deleteCollection = await colli.deleteOne(query);
         res.status(200).send({
             status: true,
             message: "De collectie is succesvol verwijderd"
         });
     } catch (error) {
-        res.status(500).send({
-            error: 'Something went wrong!',
-            value: error
-        });
-    } finally {
-        await client.close();
-    }
-})
-
-
-app.get("/getAllCollections", async (req, res) => {
-    try {
-        await client.connect();
-        const colli = client.db("kunstinhuis").collection("artworkCollections")
-
-        const find = await colli.find({}).toArray();
-
-        res.status(200).send(find);
-    } catch (error) {
-        console.log(error)
-        res.status(500).send({
-            error: 'Something went wrong!',
-            value: error
-        });
-    } finally {
-        await client.close();
-    }
-})
-app.get("/getUserName", async (req, res) => {
-    try {
-        await client.connect();
-        const colli = client.db("kunstinhuis").collection("users")
-        const query = { userId: req.query.id };
-        const find = await colli.findOne(query);
-        res.status(200).send({
-            status: true,
-            data: {
-                firstname: find.firstname,
-                lastname: find.lastname,
-            }
-        });
-    } catch (error) {
-        console.log(error)
         res.status(500).send({
             error: 'Something went wrong!',
             value: error
