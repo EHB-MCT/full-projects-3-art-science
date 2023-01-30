@@ -24,18 +24,30 @@ function domArtworks() {
 }
 
 async function renderCollections(data) {
+    console.log(data)
     let htmlString = "";
     data.forEach(collection => {
+        let artworksWithUnderscore =[];
+        collection.listOfArtworks.forEach(artworkID => {
+            var input = artworkID;
+            var result =[];
+            while (input.length){
+                result.push(input.substr(0,4));
+                input = input.substr(4);
+            }
+            artworksWithUnderscore.push(`https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg`);
+        })
+        console.log(artworksWithUnderscore);
         getData(`http://localhost:3000/getUserName?id=${collection.userId}`).then(user => {
             console.log(collection.collectionName)
             htmlString += `           
         <div class="card" id="${collection.collectionId}">
             <a href="othercollection.html">
                 <div class="card-collecions-img">
-                    <img src="../img/collection_2.png">
-                    <img src="../img/collection_3.png">
-                    <img src="../img/collection_4.png">
-                    <img src="../img/collection_5.png">
+                    <img src=${artworksWithUnderscore[0]}>
+                    <img src=${artworksWithUnderscore[1]}>
+                    <img src=${artworksWithUnderscore[2]}>
+                    <img src=${artworksWithUnderscore[3]}>
                 </div>
                 <div class="card-text is-available">
                     <h3>${collection.collectionName}</h3>
