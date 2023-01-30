@@ -130,6 +130,7 @@ function artworkData(artworkFound) {
             document.getElementById("darker-popup").style.display = "none";
             let htmlStringTwo = "";
             document.getElementById("collection-add").innerHTML = htmlStringTwo;
+            document.getElementById("card-text").style.display = "block"
         }
         document.getElementById("new-collection").addEventListener('click', openInput)
 
