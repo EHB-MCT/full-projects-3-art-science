@@ -94,7 +94,7 @@ function prepareInterestsDataToSend(ColorsInterest, CategoriesInterest) {
     let interestData = {};
     interestData.colorsInterest = ColorsInterest;
     interestData.categoriesInterest = CategoriesInterest;
-    getData(`http://localhost:3000/saveUserInterest?id=${user.userId}`, "POST", interestData);
+    getData(`https://kunstinhuis-6ha5.onrender.com/saveUserInterest?id=${user.userId}`, "POST", interestData);
     async function getData(url, method, data) {
         let resp = await fetch(url, {
             method: method,
