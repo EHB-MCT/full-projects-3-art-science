@@ -65,7 +65,7 @@ function artworkData(artworkFound) {
             <div class="card">
                 <img alt="art
                  one" src="https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg">
-                <div class="card-text dimensions">
+                <div id="card-text" class="card-text dimensions">
                     <main>
                         <p>Height</p>
                         <p>${artworkToRender['Algemene hoogte']} cm</p>
@@ -93,6 +93,7 @@ function artworkData(artworkFound) {
 
 
     function openPopup() {
+        document.getElementById("card-text").style.display = "none";
         document.getElementById("darker-popup").style.display = "block";
         let htmlStringTwo = "";
         htmlStringTwo += `<aside>
@@ -150,6 +151,7 @@ function artworkData(artworkFound) {
                 document.getElementById("darker-popup").style.display = "none";
                 let htmlStringThree = "";
                 document.getElementById("collection-add").innerHTML = htmlStringThree;
+                document.getElementById("card-text").style.display = "block";
             }
         }
 
