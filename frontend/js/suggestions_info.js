@@ -89,21 +89,28 @@ function artworkData(artworkFound) {
         document.getElementById("darker-popup").style.display = "block";
         let htmlStringTwo = "";
         htmlStringTwo += `<aside>
-        <div>
-            <p id="close-popupBtn">x</p>
-            <script></script>
+        <div class="collection-group">
+            <p id="close-popupBtn"><i class="fa-solid fa-x"></i></p>
             <h1> test </h1>
             <div>
+                <i class="fa-solid fa-square-plus"></i>
                 <p>random text<p/>
             </div>
             <div>
+                <i class="fa-solid fa-square-plus"></i>
                 <p>random text<p/>
             </div>
             <div>
+                <i class="fa-solid fa-square-plus"></i>
                 <p>random text<p/>
             </div>
             <div>
+                <i class="fa-solid fa-square-plus"></i>
                 <p>random text<p/>
+            </div>
+            <div class="new-collection" id="new-collection"> 
+                <i class="fa-solid fa-square-plus"></i>
+
             </div>
         </div>
         </aside>`
@@ -114,8 +121,37 @@ function artworkData(artworkFound) {
         function closePopup() {
             document.getElementById("darker-popup").style.display = "none";
             let htmlStringTwo = "";
-            document.getElementById("collection-add").innerHTML = htmlStringTwo
+            document.getElementById("collection-add").innerHTML = htmlStringTwo;
         }
+        document.getElementById("new-collection").addEventListener('click', openInput)
+
+
+
+        function openInput() {
+            let htmlStringThree = "";
+            htmlStringThree += `<aside>
+            <div class="collection-group">
+            <p id="close-popupBtn-collection"><i class="fa-solid fa-x"></i></p>
+            <h1> Nieuwe collectie </h1>
+            <input type="text" id="fname" name="fname" placeholder="Naam collectie">
+            <button class="button button-red"><a href="#">Toevoegen</a></button>
+        </div></aside>`;
+            document.getElementById("collection-add").innerHTML = htmlStringThree;
+            document.getElementById("close-popupBtn-collection").addEventListener('click', closePopupCollection);
+
+            function closePopupCollection() {
+                document.getElementById("darker-popup").style.display = "none";
+                let htmlStringThree = "";
+                document.getElementById("collection-add").innerHTML = htmlStringThree;
+            }
+        }
+
+
+
+
+
+
+
     }
 
 
