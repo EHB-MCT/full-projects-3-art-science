@@ -1,0 +1,115 @@
+@import url("//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book");
+@import url("//db.onlinewebfonts.com/c/d9e4167d93282285853c2410eafc4abd?family=Clearface+ITC+Pro");
+
+@font-face {
+    font-family: "Maison Neue Book";
+    src: url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.eot");
+    src: url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/3724ece79a634e7b5168905d01e59a64.svg#Maison Neue Book") format("svg");
+}
+
+@font-face {
+    font-family: "Clearface ITC Pro";
+    src: url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.eot");
+    src: url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.woff") format("woff"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d9e4167d93282285853c2410eafc4abd.svg#Clearface ITC Pro") format("svg");
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Maison Neue Book";
+}
+
+.container {
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #f1f0eb;
+    margin: auto;
+}
+
+.button {
+    height: 50px;
+    width: 90%;
+    margin: 10px 0;
+    border: 0;
+}
+
+.button-red {
+    background-color: #FC6256;
+}
+
+.button-blue {
+    background-color: #3E3C4F;
+}
+
+.button a {
+    text-decoration: none;
+    font-family: "Maison Neue Book";
+    font-size: 30px;
+    color: #f1f0eb;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: "Clearface ITC Pro";
+    font-weight: 400;
+    margin-bottom: 3%;
+    color: #3E3C4F;
+}
+
+p {
+    color: #3E3C4F;
+}
+
+img {
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 10%;
+
+}
+
+
+.greenBackground-title {
+    display: table;
+    background-color: #00BC85;
+    padding: 10px;
+    color: white;
+
+}
+
+.fa-circle-left,
+.fa-circle-info {
+    color: white;
+}
+
+.nav-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.back-button {
+    padding-top: 10%;
+    margin-left: 15%;
+    margin-top: 5%;
+
+}
+.fa-check {
+    color: #00BC85;
+}
+
+.fa-xmark {
+    color: #FC6256;
+}
+
+p {
+    line-height: 1.5em;
+}
