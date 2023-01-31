@@ -99,7 +99,7 @@ function artworkData(artworkFound) {
         htmlStringTwo += `<aside>
         <div class="collection-group">
             <p id="close-popupBtn"><i class="fa-solid fa-x"></i></p>
-            <h1> test </h1>
+            <h1> Mijn collecties </h1>
             <div>
                 <i class="fa-solid fa-square-plus"></i>
                 <p>random text<p/>
