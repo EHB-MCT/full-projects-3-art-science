@@ -19,31 +19,37 @@
     <div class="container">
         <header>
             <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i
-                        class="fa-sharp fa-solid fa-circle-xmark"></i></a>
-                <img class="navimg-overlay" src="../img/logo.png" alt="">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                    <i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
+                <img class="navimg-overlay" src="../img/logo.png" alt="logo">
                 <div class="overlay-content">
-                    <div class="active"><a href="#"> <i class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
+                    <div class="active"><a href="discover_suggestions.html"> <i
+                                class="fa-sharp fa-solid fa-compass"></i> Ontdek suggesties</a>
                     </div>
-                    <div> <a href="#"><i class="fa-solid fa-palette"></i> Kunstwerken</a></div>
-                    <div> <a href="#"><i class="fa-sharp fa-solid fa-user"></i> Kunstenaars</a></div>
-                    <div> <a href="interests.html"> <img class="iconswipe" src="../img/Swipeicon.png" alt=""> Swipe
-                            interesses</a>
+                    <div> <a href="https://kunstinhuis.be/kunstwerken//zoeken?companies=n&status=open"><i
+                                class="fa-solid fa-palette"></i> Kunstwerken</a></div>
+                    <div> <a href="https://kunstinhuis.be/kunstenaars/"><i class="fa-sharp fa-solid fa-user"></i>
+                            Kunstenaars</a></div>
+                    <div> <a href="swipe_interests.html"> <img class="iconswipe" src="../img/Swipeicon.png" alt="">
+                            Swipe interesses</a>
                     </div>
-                    <div> <a href="#"><i class="fa-solid fa-calendar-days"></i> Agenda</a></div>
-                    <div> <a href="#"><i class="fa-solid fa-gift"></i> Kunstcheque</a></div>
-                    <div> <a href="#"><i class="fa-solid fa-building"></i> Bedrijven</a></div>
+                    <div> <a href="https://kunstinhuis.be/agenda/"><i class="fa-solid fa-calendar-days"></i> Agenda</a>
+                    </div>
+                    <div> <a href="https://kunstinhuis.be/kunstcheque/"><i class="fa-solid fa-gift"></i> Kunstcheque</a>
+                    </div>
+                    <div> <a href="https://kunstinhuis.be/huren-of-kopen/kunst-huren-als-bedrijf/"><i
+                                class="fa-solid fa-building"></i> Bedrijven</a></div>
                     <div> <a href="profile.html"><i class="fa-solid fa-address-card"></i> Mijn profiel</a></div>
-                    <div class="log-out"> <a href="#" id="log-out"><i class="fa-solid fa-right-from-bracket"></i>
-                            Uitloggen</a></div>
+                    <div class="log-out"> <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Uitloggen</a></div>
                 </div>
             </div>
 
             <div class="nav-grid">
-                <div class="back-button"> <a href="profile.html"><i class="fa-solid fa-circle-left fa-xl"></i></a>
+                <div class="back-button">
                 </div>
                 <img src="../img/logo.png" alt=""> <span class="nav-button" onclick="openNav()">&#9776; </span>
             </div>
+
         </header>
 
 
@@ -69,7 +75,7 @@
             <h3 class="collection-name">Rode kunst</h3>
             <div class="switch-pos">
                 <label class="switch">
-                    <input type="checkbox" id="lock-id"> 
+                    <input type="checkbox" id="lock-id">
                     <span class="slider round"></span>
                 </label>
                 <div class="lock-collection"> <i class="fa-solid fa-lock-open"></i>
@@ -158,9 +164,6 @@
         function closeNav() {
             document.getElementById("myNav").style.height = "0%";
         }
-
-
-       
     </script>
 </body>
 
