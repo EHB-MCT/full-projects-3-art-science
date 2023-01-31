@@ -29,6 +29,7 @@
 
 .button {
     width: 100%;
+    height: 40px;
     margin: 0;
 }
 
@@ -39,19 +40,26 @@
 .collection-add {
     position: absolute;
     width: 100%;
-    top: 90%;
+    bottom: 0;
     display: flex;
     flex-direction: column
 }
 
 aside {
-    background-color: white;
+    background-color: #F1F0EB;
     padding: 5%;
     position: absolute;
     width: 100%;
     z-index: 1;
-    top: 50%;
-    transform: translateY(-60%);
+    margin-top: auto;
+    color: #3E3C4F;
+    font-size: 22px;
+}
+
+.fa-square-plus {
+    font-size: 30px;
+    color: #3E3C4F;
+    margin-right: 20px;
 }
 
 .darker-popup {
@@ -66,8 +74,23 @@ aside {
     overflow: auto;
 }
 
+.collection-group input {
+    width: 99%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 0;
+}
+
+.collection-group input::placeholder {
+    color: gray;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
 .collection-group div {
-    display: grid;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -93,4 +116,13 @@ aside {
     background-color: #00BC85;
     text-align: center;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.dimensions main a i {
+    margin-left: 6px;
+    margin-top: -4px;
 }
