@@ -1,0 +1,17 @@
+.paragraph-photo-btn {
+    width: 90%;
+    margin: auto;
+    margin-top: 14%;
+}
+
+.button {
+    width: 100%;
+}
+
+.video {
+    margin: auto;
+    margin-top: 50px;
+    scale: 1.2;
+    margin-bottom: 50px;
+    width: 38%;
+}
