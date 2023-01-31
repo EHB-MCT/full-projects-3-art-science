@@ -186,7 +186,7 @@ app.get("/getUserInterest", async (req, res) => {
     }
 })
 app.post("/saveCollection", async (req, res) => {
-    if (!req.body.collectionName || !req.body.listOfArtworks || !req.body.userName) {
+    if (!req.body.collectionName || !req.body.listOfArtworks || !req.body.userFirstname || !req.body.userLastname) {
         res.status(401).send({
             status: false,
             message: "Gelieve alle velden invullen"
@@ -206,7 +206,8 @@ app.post("/saveCollection", async (req, res) => {
             collectionName: req.body.collectionName,
             listOfArtworks: req.body.listOfArtworks,
             public: req.body.public,
-            userName: req.body.userName,
+            userFirstname: req.body.userFirstname,
+            userLastname: req.body.userLastname,
             collectionId: uuidv4(),
             userId: userId.userId
         }
@@ -334,6 +335,29 @@ app.get("/getCollectionByID", async (req, res) => {
         res.status(200).send({
             status: true,
             data: find,
+        });
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            error: 'Something went wrong!',
+            value: error
+        });
+    } finally {
+        await client.close();
+    }
+})
+
+
+app.get("/getCollectionsByUserID", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("artworkCollections")
+        const query = { userId: req.query.id };
+        const find = await colli.find(query).toArray();
+        res.status(200).send({
+            status: true,
+            data: find
         });
 
     } catch (error) {

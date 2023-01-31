@@ -89,9 +89,13 @@ aside {
 
 .collection-group div {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
 
+}
+
+#collectionName {
+    display: flex;
+    flex-direction: column;
 }
 
 .succesMessage {
