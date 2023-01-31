@@ -12,7 +12,6 @@ function searchInJson(jsonData) {
 
 function artworkData(artworkFound) {
     let artworkToRender = artworkFound[0];
-    console.log(artworkToRender)
 
     var input = artworkToRender.Identificatienummer.toString();
     var result = [];
@@ -86,32 +85,39 @@ function artworkData(artworkFound) {
 
 
     function openPopup() {
+        let userId = JSON.parse(sessionStorage.getItem('user'));
+        getData(`http://localhost:3000/getCollectionsByUserID?id=301b2c83-98e5-4395-b0d1-fc7c65771550`)
+            .then(data => {
+                data.data.forEach(collections => {
+                    let htmlString = "";
+
+                    htmlString = `<div id="${collections.collectionId}" onClick="reply_addToCollection(this.id)">
+                                    <i class="fa-solid fa-square-plus"></i>
+                                    <p>${collections.collectionName}<p/>
+                                </div>`;
+                    document.getElementById("collectionName").innerHTML += htmlString;
+
+
+
+                });
+            })
+
+
+
         document.getElementById("card-text").style.display = "none";
         document.getElementById("darker-popup").style.display = "block";
         let htmlStringTwo = "";
+
+
         htmlStringTwo += `<aside>
         <div class="collection-group">
             <p id="close-popupBtn"><i class="fa-solid fa-x"></i></p>
             <h1> Mijn collecties </h1>
-            <div>
-                <i class="fa-solid fa-square-plus"></i>
-                <p>random text<p/>
-            </div>
-            <div>
-                <i class="fa-solid fa-square-plus"></i>
-                <p>random text<p/>
-            </div>
-            <div>
-                <i class="fa-solid fa-square-plus"></i>
-                <p>random text<p/>
-            </div>
-            <div>
-                <i class="fa-solid fa-square-plus"></i>
-                <p>random text<p/>
+            <div id="collectionName">
             </div>
             <div class="new-collection" id="new-collection"> 
                 <i class="fa-solid fa-square-plus"></i>
-
+                <p>Collectie Aanmaken<p/>
             </div>
         </div>
         </aside>`
@@ -149,13 +155,32 @@ function artworkData(artworkFound) {
             }
         }
 
-
-
-
-
-
-
     }
 
+}
 
+
+// This is the _id of the artwork, it will be used to fetch the details/information of the specific artwork that the user clicked on. 
+function reply_addToCollection(clicked_id) {
+    if (clicked_id) {
+
+        console.log("werkt dit?", clicked_id);
+        // sessionStorage.setItem("artworkID", clicked_id);
+        // window.location.replace("suggestions_info.html", clicked_id);
+    }
+
+}
+
+
+async function getData(url) {
+    try {
+        let resp = await fetch(url, {
+            headers: {
+                'Content-Type': "application/json"
+            },
+        });
+        const json = await resp.json();
+        return json
+    } catch (error) {
+    }
 }
