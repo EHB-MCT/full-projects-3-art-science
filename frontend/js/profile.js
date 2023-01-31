@@ -24,7 +24,7 @@ function renderCollections(data) {
     let htmlString = "";
     console.log(data)
     data.forEach(item => {
-        var input = item.listOfArtworks[2].toString();
+        var input = item.listOfArtworks[0].toString();
         var result = [];
         console.log(result)
 
