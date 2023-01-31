@@ -26,15 +26,7 @@
    margin-top: 30px;
  }
 
- .overlay a {
-   padding: 6%;
-   text-decoration: none;
-   font-size: 18px;
-   color: #F1F0EB;
-   display: block;
-   transition: 0.2s;
-   border-top: 0.5px solid #F1F0EB;
- }
+
 
  .overlay a:hover,
  .overlay a:focus {
@@ -171,6 +163,16 @@
  @media screen and (max-height: 450px) {
    .overlay {
      overflow-y: auto;
+   }
+
+   .overlay a {
+     padding: 3%;
+     text-decoration: none;
+     font-size: 18px;
+     color: #F1F0EB;
+     display: block;
+     transition: 0.2s;
+     border-top: 0.5px solid #F1F0EB;
    }
 
    .overlay a {
