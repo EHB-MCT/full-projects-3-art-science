@@ -24,25 +24,20 @@ function domArtworks() {
 }
 
 async function renderCollections(data) {
-  
-    let htmlString = "";
-    console.log(data);
-    data.forEach(collection => {
 
-        let artworksWithUnderscore =[];
-            collection.listOfArtworks.forEach(artworkID => {
-                var input = artworkID;
-                var result =[];
-                while (input.length){
-                    result.push(input.substr(0,4));
-                    input = input.substr(4);
-                }
-                artworksWithUnderscore.push(`https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg`);
-            })
-            console.log(artworksWithUnderscore);
-       
-       
-           htmlString += `           
+    let htmlString = "";
+    data.forEach(collection => {
+        let artworksWithUnderscore = [];
+        collection.listOfArtworks.forEach(artworkID => {
+            var input = artworkID;
+            var result = [];
+            while (input.length) {
+                result.push(input.substr(0, 4));
+                input = input.substr(4);
+            }
+            artworksWithUnderscore.push(`https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg`);
+        })
+        htmlString += `           
         <div class="card" id="${collection.collectionId}" onClick="reply_click_collection(this.id)">
           
                 <div class="card-collecions-img">
@@ -53,7 +48,7 @@ async function renderCollections(data) {
                 </div>
                 <div class="card-text is-available">
                     <h3>${collection.collectionName}</h3>
-                    <h4>Door ${collection.userName}</h4>
+                    <h4>Door ${collection.userFirstname}  ${collection.userLastname}</h4>
                     <div class="availability">
                         <p>${collection.listOfArtworks.length} Kunstwerken </p>
                         <button class="button button-blue">Details <i
@@ -63,10 +58,10 @@ async function renderCollections(data) {
          
         </div>`;
         // htmlString = htmlString + newHtml;
-            let container = document.getElementById("collections-cards");
-            // container.insertAdjacentHTML("afterbegin", htmlString);
-            container.innerHTML = htmlString;
-       
+        let container = document.getElementById("collections-cards");
+        // container.insertAdjacentHTML("afterbegin", htmlString);
+        container.innerHTML = htmlString;
+
     })
 }
 
@@ -80,5 +75,5 @@ async function getData(url) {
         });
         const json = await resp.json();
         return json
-    } catch (error) {}
+    } catch (error) { }
 }

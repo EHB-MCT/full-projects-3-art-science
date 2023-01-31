@@ -5,16 +5,9 @@ fetch("../js/artworksData.json")
     .then(data => searchInJson(data))
 
 function searchInJson(jsonData) {
-
     const artworkID = sessionStorage.getItem("artworkID");
-    console.log(artworkID)
-
-
-
-    var result = jsonData.filter(x => x.Identificatienummer === artworkID);
+    var result = jsonData.filter(x => x.Identificatienummer == artworkID);
     artworkData(result);
-
-
 }
 
 function artworkData(artworkFound) {
@@ -76,7 +69,7 @@ function artworkData(artworkFound) {
                         <p>Waarde</p>
                         <p>€ ${artworkToRender.Verkoopprijs}</p>
                         <p>${availabilityString}</p>
-<a href="${imgArr[number]}"/>AR <i class="fa-solid fa-vr-cardboard"></i></a>
+                        <a href="${imgArr[number]}"/>AR <i class="fa-solid fa-vr-cardboard"></i></a>
                     </main>
                     <div class="button">
                         <button class="button button-red"><a href="#">Nu reserveren</a></button>

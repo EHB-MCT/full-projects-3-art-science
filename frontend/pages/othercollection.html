@@ -47,15 +47,12 @@
                 <img src="../img/logo.png" alt=""> <span class="nav-button" onclick="openNav()">&#9776; </span>
             </div>
         </header>
-
-
-
         <div class="profile-header">
             <img class="profile-banner"
                 src="https://img.freepik.com/premium-vector/trendy-maanstanden-abstracte-hedendaagse-esthetische-banner-kunst-aan-de-muur-decor-halverwege-de-eeuw-moderne-minimalistische-kunst-print-achtergrond-organische-vormen-magisch-concept_7280-4651.jpg"
                 alt="">
 
-            <div class="person-name ">
+            <div class="person-name " id="person-name">
                 <h1 class="greenBackground-title">Barry</h1>
                 <h1 class="greenBackground-title">Batsbak</h1>
             </div>
@@ -127,6 +124,16 @@
 
         function closeNav() {
             document.getElementById("myNav").style.height = "0%";
+        }
+
+        function reply_click(clicked_id) {
+            if (clicked_id) {
+
+                console.log(clicked_id);
+                sessionStorage.setItem("artworkID", clicked_id);
+                window.location.replace("collections_info.html", clicked_id);
+            }
+
         }
     </script>
 </body>
