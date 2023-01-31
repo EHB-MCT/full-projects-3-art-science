@@ -39,21 +39,25 @@
 .collection-add {
     position: absolute;
     width: 100%;
-    top: 90%;
+    bottom: 0;
     display: flex;
     flex-direction: column
 }
 
 aside {
-    background-color: white;
+    background-color: #F1F0EB;
     padding: 5%;
     position: sticky;
     z-index: 1;
-    padding-top: 10%;
-    padding-bottom: 10%;
     margin-top: auto;
+    color: #3E3C4F;
+    font-size: 22px;
+}
 
-
+.fa-square-plus {
+    font-size: 30px;
+    color: #3E3C4F;
+    margin-right: 20px;
 }
 
 .darker-popup {
@@ -69,7 +73,9 @@ aside {
 }
 
 .collection-group div {
-    display: grid;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
     grid-template-columns: 1fr 1fr;
 }
 
