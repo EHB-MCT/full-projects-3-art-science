@@ -88,9 +88,13 @@ aside {
 
 .collection-group div {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
     grid-template-columns: 1fr 1fr;
+}
+
+#collectionName {
+    display: flex;
+    flex-direction: column;
 }
 
 .succesMessage {
