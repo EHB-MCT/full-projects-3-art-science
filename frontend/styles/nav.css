@@ -72,6 +72,7 @@
    padding: 0px;
    position: absolute;
    right: 23px;
+   top: -3px;
    font-size: 43px;
    cursor: pointer;
 
@@ -181,52 +182,65 @@
      top: 15px;
      right: 35px;
    }
+
+
+   .nav-button {
+     color: #F1F0EB;
+     padding: 0px;
+     position: absolute;
+     right: 23px;
+     font-size: 43px;
+     cursor: pointer;
+
+   }
+
+   .nav-grid {
+     display: grid;
+     max-height: 7vh;
+     background-color: #3E3C4F;
+   }
+
+   .nav-grid img {
+     display: block;
+     max-width: 10vh;
+     margin: 0 auto;
+     z-index: 1;
+
+   }
+
+   .navimg-overlay {
+     display: block;
+     max-width: 10vh;
+     margin: 0 auto;
+   }
+
+   .iconswipe {
+     max-width: 2.04vh;
+   }
+
+   .active {
+     background-color: #FC6256;
+   }
+
+   .log-out {
+     border-bottom: 0.5px solid #F1F0EB;
+     background-color: #cdd4ffcb;
+
+   }
+
+   .overlay-content>div {
+     height: 9.4vh;
+   }
  }
 
- .nav-button {
-   color: #F1F0EB;
-   padding: 0px;
-   position: absolute;
-   right: 23px;
-   font-size: 43px;
-   cursor: pointer;
-
- }
-
- .nav-grid {
-   display: grid;
-   max-height: 7vh;
-   background-color: #3E3C4F;
- }
-
- .nav-grid img {
-   display: block;
-   max-width: 10vh;
-   margin: 0 auto;
-   z-index: 1;
-
- }
-
- .navimg-overlay {
-   display: block;
-   max-width: 10vh;
-   margin: 0 auto;
- }
-
- .iconswipe {
-   max-width: 2.04vh;
- }
-
- .active {
-   background-color: #FC6256;
- }
-
- .log-out {
-   border-bottom: 0.5px solid #F1F0EB;
-   background-color: #cdd4ffcb;
-
- }
-
- .overlay-content>div {
-   height: 9.4vh;
+ @media screen and (max-width: 300px) {
+   .nav-button {
+     color: #F1F0EB;
+     padding: 0px;
+     position: absolute;
+     right: 7px;
+     top: -3px;
+     font-size: 43px;
+     cursor: pointer;
+   }
  }

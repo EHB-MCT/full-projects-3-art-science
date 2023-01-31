@@ -1,4 +1,4 @@
-const textArr = ["De Nieuwe Garde <h1 class='greenBackground-title'> van Kunst</h1> <h1 class='greenBackground-title'>in Huis</h1>", "Lege muur?</h1> <h1 class='greenBackground-title'> Kunst</h1> <h1 class='greenBackground-title'>tehuur!", "Altijd het </h1> <h1 class='greenBackground-title'> perfecte kunstwerk</h1> <h1 class='greenBackground-title'> in huis"];
+const textArr = ["De Nieuwe Garde <h1 class='greenBackground-title'> van Kunst</h1> <h1 class='greenBackground-title'>in Huis</h1>", "Lege muur?</h1> <h1 class='greenBackground-title'> Kunst</h1> <h1 class='greenBackground-title'>te huur!", "Altijd het </h1> <h1 class='greenBackground-title'> perfecte kunstwerk</h1> <h1 class='greenBackground-title'> in huis"];
 const imgArr = ["../img/WallArt1.jpg", "../img/WallArt2.jpg", "../img/WallArt3.jpg"];
 
 

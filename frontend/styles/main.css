@@ -98,7 +98,7 @@ img {
 
 .back-button {
     margin-left: 15%;
-    margin-top: 20%;
+    margin-top: 16%;
 }
 
 .fa-check {
@@ -111,4 +111,20 @@ img {
 
 p {
     line-height: 1.5em;
+}
+
+@media screen and (max-width: 450px) {
+
+    .back-button {
+        margin-left: 15%;
+        margin-top: 12%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .back-button {
+        margin-left: 15%;
+        margin-top: 18%;
+    }
 }
