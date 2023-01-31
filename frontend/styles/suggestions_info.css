@@ -48,8 +48,8 @@
 aside {
     background-color: #F1F0EB;
     padding: 5%;
-    position: absolute;
-    width: 100%;
+
+    width: 90%;
     z-index: 1;
     margin-top: auto;
     color: #3E3C4F;
@@ -91,17 +91,18 @@ aside {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    grid-template-columns: 1fr 1fr;
+
 }
 
 .succesMessage {
+    z-index: 2;
     background-color: #00BC85;
     /*Rood (#FC6256) als het niet toegevoegd is?*/
-    position: absolute;
+    position: relative;
 
 }
 
-.succesMessage p {
+.succesMessage-p {
     display: none;
     /*Moet flex worden*/
     color: white;
@@ -125,4 +126,9 @@ aside {
 .dimensions main a i {
     margin-left: 6px;
     margin-top: -4px;
+}
+
+.checkmark-popup {
+    display: flex;
+    justify-content: center;
 }
