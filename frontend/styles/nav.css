@@ -1,5 +1,4 @@
-<<<<<<< HEAD:styles/nav.css
-@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
+<<<<<<< HEAD:styles/nav.css @import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
 
 body {
   font-family: 'Maison Neue Book';
@@ -114,121 +113,120 @@ body {
 
 .overlay-content>div {
   height: 9vh;
-=======
-@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
+  =======@import url(//db.onlinewebfonts.com/c/3724ece79a634e7b5168905d01e59a64?family=Maison+Neue+Book);
 
-body {
-  font-family: 'Maison Neue Book';
-  margin: 0px;
-  padding: 0px;
-}
+  body {
+    font-family: 'Maison Neue Book';
+    margin: 0px;
+    padding: 0px;
+  }
 
-.overlay {
-  height: 0%;
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  background-color: #3E3C4F;
-  overflow-y: hidden;
-  transition: 0.5s;
-}
-
-.overlay-content {
-  position: relative;
-  top: 0%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay a {
-  padding: 7%;
-  text-decoration: none;
-  font-size: 18px;
-  color: #F1F0EB;
-  display: block;
-  transition: 0.2s;
-  border-top: 0.5px solid #F1F0EB;
-}
-
-.overlay a:hover,
-.overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .closebtn {
-  padding: 0px;
-  position: absolute;
-  top: 17px;
-  right: 28px;
-  font-size: 30px;
-  color: #F1F0EB;
-  border: none;
-}
-
-@media screen and (max-height: 450px) {
   .overlay {
-    overflow-y: auto;
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #3E3C4F;
+    overflow-y: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
   }
 
   .overlay a {
-    font-size: 20px
+    padding: 7%;
+    text-decoration: none;
+    font-size: 18px;
+    color: #F1F0EB;
+    display: block;
+    transition: 0.2s;
+    border-top: 0.5px solid #F1F0EB;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
   }
 
   .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
+    padding: 0px;
+    position: absolute;
+    top: 17px;
+    right: 28px;
+    font-size: 30px;
+    color: #F1F0EB;
+    border: none;
   }
-}
 
-.nav-button {
-  color: #F1F0EB;
-  padding: 0px;
-  position: absolute;
-  right: 23px;
-  font-size: 43px;
-  cursor: pointer;
+  @media screen and (max-height: 450px) {
+    .overlay {
+      overflow-y: auto;
+    }
 
-}
+    .overlay a {
+      font-size: 20px
+    }
 
-.nav-grid {
-  display: grid;
-  max-height: 7vh;
-  background-color: #3E3C4F;
-}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
 
-.nav-grid img {
-  display: block;
-  max-width: 10vh;
-  margin: 0 auto;
-  z-index: 1;
+  .nav-button {
+    color: #F1F0EB;
+    padding: 0px;
+    position: absolute;
+    right: 23px;
+    font-size: 43px;
+    cursor: pointer;
 
-}
+  }
 
-.navimg-overlay {
-  display: block;
-  max-width: 10vh;
-  margin: 0 auto;
-}
+  .nav-grid {
+    display: grid;
+    max-height: 7vh;
+    background-color: #3E3C4F;
+  }
 
-.iconswipe {
-  max-width: 2.04vh;
-}
+  .nav-grid img {
+    display: block;
+    max-width: 10vh;
+    margin: 0 auto;
+    z-index: 1;
 
-.active {
-  background-color: #FC6256;
-}
+  }
 
-.log-out {
-  border-bottom: 0.5px solid #F1F0EB;
-  background-color: #cdd4ffcb;
+  .navimg-overlay {
+    display: block;
+    max-width: 10vh;
+    margin: 0 auto;
+  }
 
-}
+  .iconswipe {
+    max-width: 2.04vh;
+  }
 
-.overlay-content>div {
-  height: 9.4vh;
->>>>>>> d4ba9f611f75f8f8d80b2eb5032bd38f0b72b09d:frontend/styles/nav.css
-}
+  .active {
+    background-color: #FC6256;
+  }
+
+  .log-out {
+    border-bottom: 0.5px solid #F1F0EB;
+    background-color: #cdd4ffcb;
+
+  }
+
+  .overlay-content>div {
+    height: 9.4vh;
+    >>>>>>>d4ba9f611f75f8f8d80b2eb5032bd38f0b72b09d: frontend/styles/nav.css
+  }
