@@ -232,7 +232,7 @@
  }
 
  .overlay-content>div {
-   height: 7vh;
+   height: 7.5vh;
  }
 
  @media screen and (max-width: 300px) {
