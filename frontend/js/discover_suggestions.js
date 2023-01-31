@@ -119,7 +119,6 @@ function renderSuggestions(artworksToRender) {
         htmlString += `
         <div class="card" id="${item.identificationNumber}" onClick="reply_click(this.id)">
        
-        
             <img src="${item.imageUrl}">
             <div class="card-text ${availableStripe}">
                 <h3>${item.title}</h3>
