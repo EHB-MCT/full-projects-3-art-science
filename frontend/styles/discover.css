@@ -123,9 +123,9 @@
 }
 
 .switch-pos {
-    float: right;
     top: -8vh;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .slider {
@@ -177,4 +177,18 @@ input:checked+.slider:before {
 
 #lock-id {
     display: none;
+}
+
+.switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    float: right;
+}
+
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
