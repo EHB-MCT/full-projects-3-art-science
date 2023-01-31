@@ -1,5 +1,4 @@
 const collectionID = sessionStorage.getItem("collectionID");
-console.log(collectionID)
 
 
 // GET JSON FILE DATA
@@ -7,15 +6,12 @@ jsonDATA = [];
 fetch("../js/artworksData.json")
     .then(res => res.json())
     .then(data => jsonDATA = data)
-
-
 getData(`http://localhost:3000/getCollectionByID?id=${collectionID}`)
-.then(data => {
-    initArtworks(data.data.listOfArtworks);
-})
-
-
-
+    .then(data => {
+        initArtworks(data.data.listOfArtworks);
+        document.getElementById("person-name").innerHTML = `<h1 class="greenBackground-title">${data.data.userFirstname}</h1>
+        <h1 class="greenBackground-title">${data.data.userLastname}</h1>`;
+    })
 async function getData(url) {
     try {
         let resp = await fetch(url, {
@@ -25,34 +21,22 @@ async function getData(url) {
         });
         const json = await resp.json();
         return json
-    } catch (error) {}
+    } catch (error) { }
 }
-
-
-function initArtworks(data){
-    let artworksFoundFromJSON =[];
+function initArtworks(data) {
+    let artworksFoundFromJSON = [];
 
     data.forEach(element => {
-        const value= element;
+        const value = element;
         const key = "Identificatienummer";
-        const result = jsonDATA.filter(d=>d[key]==value);
-        
+        const result = jsonDATA.filter(d => d[key] == value);
         let artwork = result[0];
-
-    
-        
         artworksFoundFromJSON.push(artwork);
-       
     });
-    
     renderArtworks(artworksFoundFromJSON)
-
 }
-
-function renderArtworks(artworks){
-    console.log(artworks)
+function renderArtworks(artworks) {
     let htmlString = "";
-
     artworks.forEach(item => {
         let availabilityString = "";
         let availableStripe = "";
@@ -76,14 +60,8 @@ function renderArtworks(artworks){
             resultImage.push(input.substr(0, 4));
             input = input.substr(4);
         }
-
-
-
-
         htmlString += `
         <div class="card" id="${item.Identificatienummer}" onClick="reply_click(this.id)">
-       
-        
             <img src="https://kunstinhuis.be/assets/files/artworks/_grid/${resultImage[0]}_${resultImage[1]}.jpg">
             <div class="card-text ${availableStripe}">
                 <h3>${item.Titel}</h3>

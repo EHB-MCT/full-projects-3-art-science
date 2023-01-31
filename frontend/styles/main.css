@@ -97,11 +97,10 @@ img {
 }
 
 .back-button {
-    padding-top: 10%;
     margin-left: 15%;
-    margin-top: 5%;
-
+    margin-top: 20%;
 }
+
 .fa-check {
     color: #00BC85;
 }
