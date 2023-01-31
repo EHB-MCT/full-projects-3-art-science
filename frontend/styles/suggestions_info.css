@@ -139,3 +139,8 @@ aside {
     display: flex;
     justify-content: center;
 }
+
+#close-popupBtn,
+#close-popupBtn-collection {
+    width: 10%;
+}
