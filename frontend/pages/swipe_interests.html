@@ -61,21 +61,25 @@
     </div>
     <div class="tinder">
         <div class="tinder--status">
-            <i class="fa fa-remove"></i>
-            <i class="fa fa-heart"></i>
+
+            <i class="fa-solid fa-thumbs-down" id="dislike"></i>
+            <i class="fa-solid fa-thumbs-up" id="like"></i>
         </div>
 
         <div class="tinder--cards" id="cardsWrapper">
 
         </div>
 
-
+        <div id="swipeCounter">
+            <p>0/30</p>
+        </div>
         <div class="tinder--buttons">
             <button id="nope"><i class="fa-solid fa-thumbs-down"></i></button>
-            <button id="star" class='hoverme'><i class="fa-solid fa-star" id="icon-star"></i></i></button>
+            <button id="star" class="hoverme"><i class="fa-solid fa-star"></i></button>
             <button id="love"><i class="fa-solid fa-thumbs-up"></i></button>
         </div>
     </div>
+
     <script src='https://hammerjs.github.io/dist/hammer.min.js'></script>
     <script src="../js/swipe_interests.js"></script>
 </body>
