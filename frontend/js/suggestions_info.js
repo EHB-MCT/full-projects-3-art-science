@@ -120,7 +120,7 @@ function artworkData(artworkFound) {
             <div class="collection-group">
             <p id="close-popupBtn-collection"><i class="fa-solid fa-x"></i></p>
             <h1> Nieuwe collectie </h1>
-            <input type="text" id="fname" name="fname" placeholder="Naam collectie">
+            <input type="text" id="fname" name="fname" placeholder="Naam collectie" maxlength="15">
 
             <button class="button button-red" id="addToCollectionButton"><a href="#">Toevoegen</a></button>
 

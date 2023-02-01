@@ -12,6 +12,7 @@ h3 {
 }
 
 .collection-title {
+  width: 70%;
   font-size: 35px;
 }
 
@@ -28,7 +29,7 @@ h3 {
   position: relative;
   width: 60px;
   height: 34px;
- float: right;
+  float: right;
 }
 
 
@@ -63,15 +64,15 @@ h3 {
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: #FC6256;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #FC6256;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -86,7 +87,7 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.lock-collection i  {
+.lock-collection i {
   position: absolute;
   left: -25%;
   color: #3E3C4F;
@@ -95,9 +96,9 @@ input:checked + .slider:before {
 
 .switch-pos {
   float: right;
-  top: -7vh;
+  top: -9vh !important;
   position: relative;
-  
+
 }
 
 .delete-button {
@@ -105,8 +106,14 @@ input:checked + .slider:before {
   background: none;
   cursor: pointer;
   color: #3E3C4F;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.delete-button i {
+  margin-right: 10px;
+  font-size: 16px;
 }
 
 .delete-span {
@@ -158,4 +165,62 @@ input:checked + .slider:before {
   margin-top: 6%;
   font-size: 18px;
   cursor: pointer;
+}
+
+#background-shadow {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+#box-messeage {
+  width: 90%;
+  background-color: #f1f0eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #3E3C4F;
+  padding: 20px 10px;
+}
+
+#box-messeage h1 {
+  font-size: 30px;
+  margin: 10px 0px;
+}
+
+#box-messeage h3 {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0px;
+  font-weight: 0;
+}
+
+.cancel-btn,
+.delete-btn {
+  width: 50%;
+}
+
+.cancel-btn button,
+.delete-btn button {
+  width: 100%;
+  padding: 15px 0px;
+  border: 0;
+  font-size: 21px;
+  color: #f1f0eb;
+}
+
+.cancel-btn button {
+  background-color: #3E3C4F;
+}
+
+.delete-btn button {
+  background-color: #FC6256;
 }

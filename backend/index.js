@@ -362,3 +362,35 @@ app.get("/getCollectionsByUserID", async (req, res) => {
         await client.close();
     }
 })
+app.post("/deleteArtwork", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("artworkCollections")
+        const database = client.db("kunstinhuis");
+        const coll = database.collection("artworkCollections");
+        const filter = {
+            collectionId: req.query.id
+        };
+
+        let updateDoc = {
+            $pull: {
+                listOfArtworks: req.body.listOfArtworks,
+            }
+        };
+        const result = await coll.updateMany(filter, updateDoc);
+
+        res.status(200).send({
+            status: true,
+            message: "Deze kunstwerk is succesvol bijgewerkt"
+        });
+    } catch (error) {
+        res.status(500).send({
+            status: false,
+            error: 'Something went wrong!',
+            value: error
+        });
+        console.log(error)
+    } finally {
+        await client.close();
+    }
+})

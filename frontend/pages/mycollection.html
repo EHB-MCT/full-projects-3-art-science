@@ -58,9 +58,14 @@
             </div>
 
         </header>
-
-
-
+        <div id="background-shadow">
+            <!-- <div id="box-messeage">
+                <h1>Kunstwerk verwijderen</h1>
+                <h3>Wil je het kunstwerk uit je collectie verwijderen?</h3>
+                <div class="cancel-btn"><button id="cancel-btn">NEE</button></div>
+                <div class="delete-btn"><button id="delete-btn">JA</button></div>
+            </div> -->
+        </div>
         <div class="profile-header">
             <img class="profile-banner" src="../img/bannerprofile.png" alt="">
 
@@ -78,7 +83,7 @@
 
 
         <div class="collection-head">
-            <h1 class="collection-title">Rode kunst</h1>
+            <h1 class="collection-title" id="collection-title">Rode kunst</h1>
             <h3 class="collection-name">Mijn collectie</h3>
             <div class="switch-pos">
                 <label class="switch">
@@ -88,61 +93,19 @@
                 <div class="lock-collection"> </i>
                     <p>Openbaar</p>
                 </div>
-                <!--   <div class="lock-collection">    <p>Prive</p></div>    -->
+
             </div>
             <br>
             <div class="delete-span">
-                <button class="delete-button">
+                <button class="delete-button" id="btn-deleteCollectie">
                     <i class="fa-solid fa-trash-can"></i> &nbsp;
-                    <p>Verwijder</p>
+                    <p>Verwijder collectie</p>
                 </button>
             </div>
 
             <br>
         </div>
         <div id="artworks-cards" class="cards">
-            <div class="card">
-                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/1515_0012_382_520_s.jpg">
-                <div class="card-text not-available">
-                    <h3>Dys. Ut. - Part VI</h3>
-                    <h4>Door Dilum Coppens</h4>
-                    <div class="availability-mycoll">
-                        <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
-                        <button class="button-mycol button-blue"><a><i
-                                    class="fa-solid fa-circle-info fa-xl"></i></a></button>
-                        <button class="button-mycol button-red"><a><i
-                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/0381_0189_694_459_s.JPG">
-                <div class="card-text not-available">
-                    <h3>Dys. Ut. - Part VI</h3>
-                    <h4>Door Dilum Coppens</h4>
-                    <div class="availability-mycoll">
-                        <p>Niet beschikbaar <i class="fa-solid fa-xmark"></i></p>
-                        <button class="button-mycol button-blue"><a><i
-                                    class="fa-solid fa-circle-info fa-xl"></i></a></button>
-                        <button class="button-mycol button-red"><a><i
-                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/0156_0183_694_492_s.jpg">
-                <div class="card-text is-available">
-                    <h3>De schepping</h3>
-                    <h4>Door Veerle Rooms</h4>
-                    <div class="availability-mycoll">
-                        <p>Beschikbaar <i class="fa-solid fa-check"></i></p>
-                        <button class="button-mycol button-blue"><a><i
-                                    class="fa-solid fa-circle-info fa-xl"></i></a></button>
-                        <button class="button-mycol button-red"><a><i
-                                    class="fa-solid fa-trash-can fa-xl"></i></a></button>
-                    </div>
-                </div>
-            </div>
             <div class="card">
                 <img src="https://kunstinhuis.be/assets/files/made/assets/files/artworks/1116_0019_619_520_s.jpg">
                 <div class="card-text not-available">
@@ -162,6 +125,7 @@
 
     </div>
     <script src="../js/mycollectionAuth.js"></script>
+    <script src="../js/mycollection.js"></script>
 
     <script>
         function openNav() {
