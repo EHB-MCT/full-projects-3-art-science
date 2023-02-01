@@ -236,14 +236,14 @@ app.patch("/updateCollection", async (req, res) => {
         const filter = {
             collectionId: req.query.id
         };
-        const updateDoc = {
-            $set: {
-                collectionName: req.body.collectionName,
+
+        let updateDoc = {
+            $push: {
                 listOfArtworks: req.body.listOfArtworks,
-                public: req.body.public,
-            },
+            }
         };
         const result = await movies.updateMany(filter, updateDoc);
+
         res.status(200).send({
             status: true,
             message: "Deze collectie is succesvol bijgewerkt"
@@ -279,8 +279,6 @@ app.delete("/deleteCollection", async (req, res) => {
         await client.close();
     }
 })
-
-
 app.get("/getAllCollections", async (req, res) => {
     try {
         await client.connect();
@@ -299,8 +297,6 @@ app.get("/getAllCollections", async (req, res) => {
         await client.close();
     }
 })
-
-
 app.get("/getUserName", async (req, res) => {
     try {
         await client.connect();
@@ -324,8 +320,6 @@ app.get("/getUserName", async (req, res) => {
         await client.close();
     }
 })
-
-
 app.get("/getCollectionByID", async (req, res) => {
     try {
         await client.connect();
@@ -347,8 +341,6 @@ app.get("/getCollectionByID", async (req, res) => {
         await client.close();
     }
 })
-
-
 app.get("/getCollectionsByUserID", async (req, res) => {
     try {
         await client.connect();
