@@ -57,6 +57,7 @@ async function renderCollections(data) {
                 </div>
          
         </div>`;
+
         // htmlString = htmlString + newHtml;
         let container = document.getElementById("collections-cards");
         // container.insertAdjacentHTML("afterbegin", htmlString);
@@ -75,5 +76,5 @@ async function getData(url) {
         });
         const json = await resp.json();
         return json
-    } catch (error) { }
+    } catch (error) {}
 }
