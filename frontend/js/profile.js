@@ -22,11 +22,10 @@ async function getData(url) {
 
 function renderCollections(data) {
     let htmlString = "";
-    console.log(data)
+
     data.forEach(item => {
         var input = item.listOfArtworks[0].toString();
         var result = [];
-        console.log(result)
 
         while (input.length) {
             result.push(input.substr(0, 4));
@@ -34,7 +33,7 @@ function renderCollections(data) {
         }
 
         htmlString += `
-       <div class="card">
+       <div class="card" id="${item.collectionId}" onClick="reply_click_collection(this.id)">
         <a href="mycollection.html"><img
                 src="https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg"
                 alt=""></a>
