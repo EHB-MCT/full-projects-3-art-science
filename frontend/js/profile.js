@@ -1,6 +1,6 @@
 let userId = JSON.parse(sessionStorage.getItem('user'));
 
-getData(`http://localhost:3000/getCollectionsByUserID?id=${userId.userId}`)
+getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionsByUserID?id=${userId.userId}`)
     .then(data => {
         renderCollections(data.data);
 
@@ -17,7 +17,7 @@ async function getData(url) {
         const json = await resp.json();
         return json
 
-    } catch (error) {}
+    } catch (error) { }
 }
 
 function renderCollections(data) {

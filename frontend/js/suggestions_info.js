@@ -74,7 +74,7 @@ function artworkData(artworkFound) {
     document.getElementById("popupBtn").addEventListener('click', openPopup);
     function openPopup() {
 
-        getData(`http://localhost:3000/getCollectionsByUserID?id=${userId.userId}`)
+        getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionsByUserID?id=${userId.userId}`)
             .then(data => {
                 data.data.forEach(collections => {
                     let htmlString = "";
@@ -159,9 +159,8 @@ function artworkData(artworkFound) {
                 saveCollection.userFirstname = userId.firstname;
                 saveCollection.userLastname = userId.lastname;
                 saveCollection.listOfArtworks.push(artworkID);
-                // console.log(saveCollection)
                 if (saveCollection.collectionName != "") {
-                    getData(`http://localhost:3000/saveCollection?id=${userId.userId}`, "POST", saveCollection).then(data => {
+                    getData(`https://kunstinhuis-6ha5.onrender.com/saveCollection?id=${userId.userId}`, "POST", saveCollection).then(data => {
                         if (data.status) {
                             document.getElementById("succesMessage-p").style.display = "block";
                             document.getElementById("succesMessage-p").innerHTML = "De collectie is succesvol opgeslagen";
@@ -185,13 +184,8 @@ function artworkData(artworkFound) {
     }
 }
 
-// This is the _id of the artwork, it will be used to fetch the details/information of the specific artwork that the user clicked on. 
 function reply_addToCollection(clicked_id) {
-    // document.getElementById("succesMessage-p").style.display = "block";
-    // document.getElementById("collection-add").style.display = "none";
-
-
-    getData(`http://localhost:3000/updateCollection?id=1a7787e8-3e17-40a4-93e3-01bb1b52e157`, "PATCH", { "listOfArtworks": artworkID })
+    getData(`https://kunstinhuis-6ha5.onrender.com/updateCollection?id=${clicked_id}`, "PATCH", { "listOfArtworks": artworkID })
     document.getElementById("succesMessage-p").style.display = "block";
     document.getElementById("succesMessage-p").innerHTML = "De collectie is succesvol opgeslagen";
     document.getElementById("collection-add").style.display = "none";
@@ -215,19 +209,4 @@ async function getData(url, method, data) {
         console.log('catch', error)
     }
 }
-
-// async function getData(url) {
-//     try {
-//         let resp = await fetch(url, {
-//             headers: {
-//                 'Content-Type': "application/json"
-//             },
-//         });
-//         const json = await resp.json();
-//         return json
-
-//     } catch (error) {
-//     }
-// }
-
 
