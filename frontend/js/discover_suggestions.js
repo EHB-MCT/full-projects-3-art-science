@@ -102,33 +102,176 @@ function renderSuggestions(artworksToRender) {
 
 
 
-    let htmlString = "";
-
     artworksToRender.forEach(item => {
-        let waarde = false;
-        let checkBox = document.getElementById("test");
-        checkBox.addEventListener("click", myFunction(item))
 
-        let availabilityString = "";
-        let availableStripe = "";
+        let htmlString = "";
+        if (item.available == "Ja") {
 
+            let availabilityString = "";
+            let availableStripe = "";
+            switch (item.available) {
+                case "Ja":
+                    availabilityString = `Beschibaar <i class="fa-solid fa-check"></i>`;
+                    availableStripe = `is-available`;
+                    break;
+                case "Nee":
+                    availabilityString = `Niet Beschikbaar <i class="fa-solid fa-xmark"></i>`;
+                    availableStripe = `not-available`;
+                    break;
+                default:
 
-        function myFunction(item) {
-            if (checkBox.checked == false) {
-                waarde = false;
-            } else {
-                waarde = true;
             }
-            console.log(waarde)
+
+            htmlString += `
+            <div class="card" id="${item.identificationNumber}" onClick="reply_click(this.id)">
+           
+                <img src="${item.imageUrl}">
+                <div class="card-text ${availableStripe}">
+                    <h3>${item.title}</h3>
+                    <h4>${item.artist}</h4>
+                    <div class="availability">
+                        <p>${availabilityString}</p>
+                        <button class="button button-blue">Details <i
+                                class="fa-solid fa-circle-info"></i></button>
+                    </div>
+                </div>
+           
+                
+        </div>`;
+
+
+
+
 
         }
 
-
-
-
-        // De knop
+        let container = document.getElementById("artworks-cards");
+        container.insertAdjacentHTML("afterbegin", htmlString);
 
     });
-    let container = document.getElementById("artworks-cards");
-    container.insertAdjacentHTML("afterbegin", htmlString);
+
+
+
+    let active = false;
+
+
+
+
+    document.getElementById("toggle").addEventListener("click", toggle)
+
+    function toggle() {
+        let toggle = document.querySelector('.toggle')
+        let text = document.querySelector('.text')
+        active = !active
+        if (!active) {
+            toggle.classList.add('active')
+            text.innerHTML = 'Alleen beschikbare'
+
+            artworksToRender.forEach(item => {
+
+                let htmlString = "";
+                if (item.available == "Ja") {
+
+                    let availabilityString = "";
+                    let availableStripe = "";
+                    switch (item.available) {
+                        case "Ja":
+                            availabilityString = `Beschibaar <i class="fa-solid fa-check"></i>`;
+                            availableStripe = `is-available`;
+                            break;
+                        case "Nee":
+                            availabilityString = `Niet Beschikbaar <i class="fa-solid fa-xmark"></i>`;
+                            availableStripe = `not-available`;
+                            break;
+                        default:
+
+                    }
+
+                    htmlString += `
+                    <div class="card" id="${item.identificationNumber}" onClick="reply_click(this.id)">
+                   
+                        <img src="${item.imageUrl}">
+                        <div class="card-text ${availableStripe}">
+                            <h3>${item.title}</h3>
+                            <h4>${item.artist}</h4>
+                            <div class="availability">
+                                <p>${availabilityString}</p>
+                                <button class="button button-blue">Details <i
+                                        class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </div>
+                   
+                        
+                </div>`;
+
+
+
+
+
+                }
+
+                let container = document.getElementById("artworks-cards");
+                container.insertAdjacentHTML("afterbegin", htmlString);
+
+            });
+
+
+        } else {
+            toggle.classList.remove('active')
+            text.innerHTML = 'Alles';
+
+            artworksToRender.forEach(item => {
+
+                let htmlString = "";
+
+                let availabilityString = "";
+                let availableStripe = "";
+                switch (item.available) {
+                    case "Ja":
+                        availabilityString = `Beschibaar <i class="fa-solid fa-check"></i>`;
+                        availableStripe = `is-available`;
+                        break;
+                    case "Nee":
+                        availabilityString = `Niet Beschikbaar <i class="fa-solid fa-xmark"></i>`;
+                        availableStripe = `not-available`;
+                        break;
+                    default:
+
+                }
+
+                htmlString += `
+                    <div class="card" id="${item.identificationNumber}" onClick="reply_click(this.id)">
+                   
+                        <img src="${item.imageUrl}">
+                        <div class="card-text ${availableStripe}">
+                            <h3>${item.title}</h3>
+                            <h4>${item.artist}</h4>
+                            <div class="availability">
+                                <p>${availabilityString}</p>
+                                <button class="button button-blue">Details <i
+                                        class="fa-solid fa-circle-info"></i></button>
+                            </div>
+                        </div>
+                   
+                        
+                </div>`;
+
+
+
+                let container = document.getElementById("artworks-cards");
+                container.insertAdjacentHTML("afterbegin", htmlString);
+
+            });
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 }
