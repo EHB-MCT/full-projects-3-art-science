@@ -153,11 +153,11 @@
 }
 
 input:checked+.slider {
-    background-color: #FC6256;
+    background-color: #00BC85;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #FC6256;
+    box-shadow: 0 0 1px #00BC85;
 }
 
 input:checked+.slider:before {
@@ -194,15 +194,19 @@ input:checked+.slider:before {
 }
 
 .text {
-    font-size: 23px;
-    color: #494949;
+    font-size: 18px;
+    color: #3E3C4F;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 3%;
 }
 
 .toggle {
+    background-color: #00BC85;
     position: relative;
     width: 40px;
     height: 20px;
-    border: 2px solid #494949;
+    border: 2px solid #00BC85;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -217,21 +221,25 @@ input:checked+.slider:before {
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    background-color: #494949;
+    background-color: white;
     transition: .3s;
 }
 
 .active {
-    border-color: rgb(85, 227, 180);
+    border-color: #FC6256;
 }
 
 .active+.text {
-    color: rgb(85, 227, 180);
+    color: #3E3C4F;
 }
 
 .active .circle {
     left: 100%;
     transform: translateX(-100%);
     transition: .3s;
-    background-color: rgb(85, 227, 180);
+    background-color: white;
+}
+
+.Btn-switch {
+    display: flex;
 }
