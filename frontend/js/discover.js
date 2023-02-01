@@ -10,7 +10,7 @@ function domCollection() {
     document.getElementById("artworks").style.display = "none";
     document.getElementById("collections").style.display = "block";
 
-    getData("http://localhost:3000/getAllCollections")
+    getData("https://kunstinhuis-6ha5.onrender.com/getAllCollections")
         .then(data => {
             renderCollections(data);
         })

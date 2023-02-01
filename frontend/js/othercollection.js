@@ -6,7 +6,7 @@ jsonDATA = [];
 fetch("../js/artworksData.json")
     .then(res => res.json())
     .then(data => jsonDATA = data)
-getData(`http://localhost:3000/getCollectionByID?id=${collectionID}`)
+getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionByID?id=${collectionID}`)
     .then(data => {
         initArtworks(data.data.listOfArtworks);
         document.getElementById("person-name").innerHTML = `<h1 class="greenBackground-title">${data.data.userFirstname}</h1>
