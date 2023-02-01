@@ -99,21 +99,24 @@ aside {
 }
 
 .succesMessage {
+    position: absolute;
     z-index: 2;
     background-color: #00BC85;
-    /*Rood (#FC6256) als het niet toegevoegd is?*/
-    position: relative;
 
+    width: 100vw;
+    top: 0px;
 }
 
 .succesMessage-p {
+    z-index: 999;
     display: none;
     /*Moet flex worden*/
-    color: white;
+    color: #F1F0EB;
     width: 90%;
     margin: auto;
     justify-content: center;
     padding: 5%;
+    font-size: 22px;
 }
 
 .dimensions main a {
@@ -135,4 +138,9 @@ aside {
 .checkmark-popup {
     display: flex;
     justify-content: center;
+}
+
+#close-popupBtn,
+#close-popupBtn-collection {
+    width: 10%;
 }

@@ -85,20 +85,17 @@ function artworkData(artworkFound) {
 
 
     function openPopup() {
+
         let userId = JSON.parse(sessionStorage.getItem('user'));
         getData(`http://localhost:3000/getCollectionsByUserID?id=301b2c83-98e5-4395-b0d1-fc7c65771550`)
             .then(data => {
                 data.data.forEach(collections => {
                     let htmlString = "";
-
                     htmlString = `<div id="${collections.collectionId}" onClick="reply_addToCollection(this.id)">
                                     <i class="fa-solid fa-square-plus"></i>
                                     <p>${collections.collectionName}<p/>
                                 </div>`;
                     document.getElementById("collectionName").innerHTML += htmlString;
-
-
-
                 });
             })
 
@@ -109,7 +106,7 @@ function artworkData(artworkFound) {
         let htmlStringTwo = "";
 
         htmlStringTwo += `<aside id="aside-popup">
-        <div class="collection-group" id="collection-group">
+        <div class="collection-group">
 
             <p id="close-popupBtn"><i class="fa-solid fa-x"></i></p>
             <h1> Mijn collecties </h1>
@@ -123,7 +120,7 @@ function artworkData(artworkFound) {
 
             </div>
         </div>
-        </aside>`
+        </aside>`;
 
         document.getElementById("collection-add").innerHTML = htmlStringTwo;
         document.getElementById("close-popupBtn").addEventListener('click', closePopup);
@@ -143,11 +140,13 @@ function artworkData(artworkFound) {
         function openInput() {
             let htmlStringThree = "";
             htmlStringThree += `<aside id="aside-popup">
-            <div class="collection-group" id="collection-group">
+            <div class="collection-group">
             <p id="close-popupBtn-collection"><i class="fa-solid fa-x"></i></p>
             <h1> Nieuwe collectie </h1>
             <input type="text" id="fname" name="fname" placeholder="Naam collectie">
-            <button class="button button-red"><a href="#">Toevoegen</a></button>
+
+            <button class="button button-red" id="addToCollectionButton"><a href="#">Toevoegen</a></button>
+
             </div></aside>`;
             document.getElementById("collection-add").innerHTML = htmlStringThree;
             document.getElementById("close-popupBtn-collection").addEventListener('click', closePopupCollection);
@@ -161,12 +160,10 @@ function artworkData(artworkFound) {
                 document.getElementById("card-text").style.display = "block";
                 document.getElementById("succesMessage-p").style.display = "none";
             }
-            document.getElementById("collection-group").addEventListener('click', succesMsg);
+            //document.getElementById("collection-group").addEventListener('click', succesMsg);
 
             function succesMsg() {
                 document.getElementById("succesMessage-p").style.display = "flex";
-
-
                 let htmlStringFour = "";
                 htmlStringFour += `<aside id="aside-popup">
                 <div class="collection-group" id="collection-group">
@@ -176,9 +173,16 @@ function artworkData(artworkFound) {
                 </div>
                 </div>
                 </aside>`;
-                document.getElementById("collection-add").innerHTML = htmlStringFour;
+                // document.getElementById("collection-add").innerHTML = htmlStringFour;
                 document.getElementById("close-popupBtn-collection").addEventListener('click', closePopupCollection);
             }
+
+            document.getElementById("addToCollectionButton").addEventListener('click', e => {
+
+                let newCollectionName = document.getElementById("fname").value;
+                console.log(newCollectionName)
+            });
+
 
         }
 
@@ -190,13 +194,16 @@ function artworkData(artworkFound) {
 
 // This is the _id of the artwork, it will be used to fetch the details/information of the specific artwork that the user clicked on. 
 function reply_addToCollection(clicked_id) {
-    if (clicked_id) {
+    document.getElementById("succesMessage-p").style.display = "block";
+    document.getElementById("collection-add").style.display = "none";
+    setTimeout(function () {
 
-        console.log("werkt dit?", clicked_id);
-        // sessionStorage.setItem("artworkID", clicked_id);
-        // window.location.replace("suggestions_info.html", clicked_id);
-    }
 
+        window.location.reload();
+    }, 1500)
+    console.log("werkt dit?", clicked_id);
+    // sessionStorage.setItem("artworkID", clicked_id);
+    // window.location.replace("suggestions_info.html", clicked_id);
 }
 
 
@@ -209,6 +216,9 @@ async function getData(url) {
         });
         const json = await resp.json();
         return json
+
     } catch (error) {
     }
 }
+
+
