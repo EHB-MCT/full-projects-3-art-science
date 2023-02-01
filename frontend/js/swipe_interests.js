@@ -1,6 +1,8 @@
 'use strict';
 let user = JSON.parse(sessionStorage.getItem('user'));
-
+var nope = document.getElementById('nope');
+var love = document.getElementById('love');
+var tinderContainer = document.querySelector('.tinder');
 document.getElementById("log-out").addEventListener("click", e => {
     sessionStorage.clear();
     location.replace('login.html')
@@ -20,10 +22,7 @@ fetch("../js/artworksData.json")
     .then(res => res.json())
     .then(data => getRandomArtworks(data))
 
-var tinderContainer = document.querySelector('.tinder');
-var allCards = document.querySelectorAll('.tinder--card');
-var nope = document.getElementById('nope');
-var love = document.getElementById('love');
+
 
 $('#star').on('click', function () {
     // function random(max) {
@@ -42,7 +41,8 @@ $('#star').on('click', function () {
     //     c.appendChild(e);
     // }
     // $(this).append(c);
-    document.getElementById("star").style.backgroundColor = "#c7df00";
+    document.getElementById("star").style.backgroundColor = "orange";
+
 })
 
 let artworksToSwipe = [];
@@ -59,13 +59,14 @@ let ColorsInterest = {};
 let CategoriesInterest = {};
 
 let buttonClickCounter = 30;
+let swipeCounter = 0;
 
 nope.addEventListener('click', event => {
-    document.getElementById("star").style.backgroundColor = "#3E3C4F";
+    document.getElementById("star").style.backgroundColor = "#3E3c4f";
 
     artInterestBoolean = false;
     buttonClickCounter--;
-
+    swipeCounter++;
     if (buttonClickCounter > 0) {
         popTopArtwork(artInterestBoolean)
     } else if (buttonClickCounter <= 0) {
@@ -74,12 +75,15 @@ nope.addEventListener('click', event => {
         nope.disabled = true;
         prepareInterestsDataToSend(ColorsInterest, CategoriesInterest);
     }
+    renderSwipeCounter(swipeCounter);
 })
 
+
 love.addEventListener('click', event => {
-    document.getElementById("star").style.backgroundColor = "#3E3C4F";
+    document.getElementById("star").style.backgroundColor = "#3E3c4f";
     artInterestBoolean = true;
     buttonClickCounter--;
+    swipeCounter++;
     if (buttonClickCounter > 0) {
         popTopArtwork(artInterestBoolean)
     } else if (buttonClickCounter <= 0) {
@@ -88,6 +92,7 @@ love.addEventListener('click', event => {
         love.disabled = true;
         prepareInterestsDataToSend(ColorsInterest, CategoriesInterest);
     }
+    renderSwipeCounter(swipeCounter);
 })
 
 function prepareInterestsDataToSend(ColorsInterest, CategoriesInterest) {
@@ -247,58 +252,118 @@ function renderArtworkCards(artworksToSwipe) {
     });
     let container = document.getElementById("cardsWrapper");
     container.insertAdjacentHTML("beforeend", htmlString);
+
+
+    initCardEvent();
     initCards();
+
+}
+let swipeDeltaX;
+
+function initCardEvent() {
+    var allCards = document.querySelectorAll('.tinder--card');
+
+
+    allCards.forEach(function (el) {
+
+
+        var hammertime = new Hammer(el);
+
+        hammertime.on('pan', function (event) {
+            el.classList.add('moving');
+        });
+        hammertime.on('pan', function (event) {
+            swipeDeltaX = event.deltaX;
+            if (event.deltaX === 0) return;
+            if (event.center.x === 0 && event.center.y === 0) return;
+            tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
+            tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
+            var xMulti = event.deltaX * 0.03;
+            var yMulti = event.deltaY / 80;
+            var rotate = xMulti * yMulti;
+            event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
+        });
+        hammertime.on('panend', function (event) {
+            el.classList.remove('moving');
+            tinderContainer.classList.remove('tinder_love');
+            tinderContainer.classList.remove('tinder_nope');
+            var moveOutWidth = document.body.clientWidth;
+            var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
+            event.target.classList.toggle('removed', !keep);
+            if (keep) {
+                event.target.style.transform = '';
+            } else {
+
+                if (swipeDeltaX < 0) {
+                    swipeCounter++;
+                    artInterestBoolean = false;
+                    buttonClickCounter--;
+
+                    if (buttonClickCounter > 0) {
+                        popTopArtwork(artInterestBoolean)
+                    } else if (buttonClickCounter <= 0) {
+                        countDoublesInCategoriesArray(dislikedCategoriesArray, likedCategoriesArray)
+                        countDoublesInColorsArray(dislikedColorsArray, likedColorsArray)
+                        nope.disabled = true;
+                        prepareInterestsDataToSend(ColorsInterest, CategoriesInterest);
+                    }
+                    renderSwipeCounter(swipeCounter);
+
+
+                } else if (swipeDeltaX > 0) {
+
+                    swipeCounter++;
+
+                    artInterestBoolean = true;
+                    buttonClickCounter--;
+                    if (buttonClickCounter > 0) {
+                        popTopArtwork(artInterestBoolean)
+                    } else if (buttonClickCounter <= 0) {
+                        countDoublesInCategoriesArray(dislikedCategoriesArray, likedCategoriesArray)
+                        countDoublesInColorsArray(dislikedColorsArray, likedColorsArray)
+                        love.disabled = true;
+                        prepareInterestsDataToSend(ColorsInterest, CategoriesInterest);
+                    }
+
+                    renderSwipeCounter(swipeCounter);
+                }
+
+                var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
+                var toX = event.deltaX > 0 ? endX : -endX;
+                var endY = Math.abs(event.velocityY) * moveOutWidth;
+                var toY = event.deltaY > 0 ? endY : -endY;
+                var xMulti = event.deltaX * 0.03;
+                var yMulti = event.deltaY / 80;
+                var rotate = xMulti * yMulti;
+                event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
+
+                initCards()
+            }
+        });
+    });
 }
 
-function initCards(card, index) {
+// a counter to see the progress of the swipes to be done.
+function renderSwipeCounter(swipeCounter) {
+
+    document.getElementById("swipeCounter").innerHTML = `<p>${swipeCounter}/30</p>`;
+}
+
+// code that executes a transform on the cards a soon as they are rendered.
+function initCards() {
+    var allCards = document.querySelectorAll('.tinder--card');
+    var tinderContainer = document.querySelector('.tinder');
     var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
     newCards.forEach(function (card, index) {
         card.style.zIndex = allCards.length - index;
-        card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 30 * index + 'px)';
+        card.style.transform = 'scale(' + (20 - index) / 20 + ') translateY(-' + 20 * index + 'px)';
         card.style.opacity = (10 - index) / 10;
     });
 
     tinderContainer.classList.add('loaded');
 }
-// initCards();
-allCards.forEach(function (el) {
-    var hammertime = new Hammer(el);
 
-    hammertime.on('pan', function (event) {
-        el.classList.add('moving');
-    });
-    hammertime.on('pan', function (event) {
-        if (event.deltaX === 0) return;
-        if (event.center.x === 0 && event.center.y === 0) return;
-        tinderContainer.classList.toggle('tinder_love', event.deltaX > 0);
-        tinderContainer.classList.toggle('tinder_nope', event.deltaX < 0);
-        var xMulti = event.deltaX * 0.03;
-        var yMulti = event.deltaY / 80;
-        var rotate = xMulti * yMulti;
-        event.target.style.transform = 'translate(' + event.deltaX + 'px, ' + event.deltaY + 'px) rotate(' + rotate + 'deg)';
-    });
-    hammertime.on('panend', function (event) {
-        el.classList.remove('moving');
-        tinderContainer.classList.remove('tinder_love');
-        tinderContainer.classList.remove('tinder_nope');
-        var moveOutWidth = document.body.clientWidth;
-        var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
-        event.target.classList.toggle('removed', !keep);
-        if (keep) {
-            event.target.style.transform = '';
-        } else {
-            var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
-            var toX = event.deltaX > 0 ? endX : -endX;
-            var endY = Math.abs(event.velocityY) * moveOutWidth;
-            var toY = event.deltaY > 0 ? endY : -endY;
-            var xMulti = event.deltaX * 0.03;
-            var yMulti = event.deltaY / 80;
-            var rotate = xMulti * yMulti;
-            event.target.style.transform = 'translate(' + toX + 'px, ' + (toY + event.deltaY) + 'px) rotate(' + rotate + 'deg)';
-            initCards();
-        }
-    });
-});
+
 
 function createButtonListener(love) {
     return function (event) {
@@ -316,6 +381,7 @@ function createButtonListener(love) {
         event.preventDefault();
     };
 }
+
 var nopeListener = createButtonListener(false);
 var loveListener = createButtonListener(true);
 nope.addEventListener('click', nopeListener);
