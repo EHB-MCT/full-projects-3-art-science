@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Full Projects 3 - Art & Science">
+    <meta name="description" content="Info over de kunstwerken in een collectie.">
+    <meta name="keywords" content="collectie, kunstwerken, kunst, info, informatie">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/nav.css">
     <link rel="stylesheet" href="../styles/suggestions_info.css">
@@ -91,7 +94,15 @@
 
         </div>
 
+        <div class="succesMessage" id="succesMessage">
+            <p class="succesMessage-p" id="succesMessage-p">Succesvol toegevoegd aan collectie</p>
+        </div>
+        <div class="darker-popup" id="darker-popup"> </div>
+        <div class="paragraph-everything" id="artworkDetails">
+        </div>
 
+        <div class="collection-add" id="collection-add">
+        </div>
 </body>
 <script>
     function openNav() {
@@ -100,6 +111,16 @@
 
     function closeNav() {
         document.getElementById("myNav").style.height = "0%";
+    }
+
+    function reply_click_collection(clicked_id) {
+        if (clicked_id) {
+
+            console.log(clicked_id);
+            sessionStorage.setItem("collectionID", clicked_id);
+            // window.location.replace("othercollection.html", clicked_id);
+        }
+
     }
 </script>
 <script src="../js/collections_info.js"></script>
