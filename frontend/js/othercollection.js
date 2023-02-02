@@ -1,6 +1,6 @@
 const collectionID = sessionStorage.getItem("collectionID");
 let user = JSON.parse(sessionStorage.getItem('user'));
-let collectionName = sessionStorage.getItem("collectionName");
+
 
 
 
@@ -13,6 +13,7 @@ getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionByID?id=${collection
     .then(data => {
         initArtworks(data.data.listOfArtworks);
         sessionStorage.setItem("collectionName", data.data.collectionName)
+        let collectionName = sessionStorage.getItem("collectionName");
         console.log(collectionName)
         document.getElementById("person-name").innerHTML = `<h1 class="greenBackground-title">${data.data.userFirstname}</h1>
         <h1 class="greenBackground-title">${data.data.userLastname}</h1>`;
