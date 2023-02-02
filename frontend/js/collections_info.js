@@ -8,6 +8,7 @@ function searchInJson(jsonData) {
     var result = jsonData.filter(x => x.Identificatienummer == artworkID);
     artworkData(result);
 }
+
 function artworkData(artworkFound) {
     let artworkToRender = artworkFound[0];
 
@@ -59,7 +60,7 @@ function artworkData(artworkFound) {
 </main>
         <div class="button">
             <button class="button button-red"><a href="#">Nu reserveren</a></button>
-            <button class="button button-blue"><a href="#">Toevoegen aan collectie</a></button>
+            <button class="button button-blue" id="popupBtn"><a href="#">Toevoegen aan collectie</a></button>
         </div>
     </div>
 </div>`;
