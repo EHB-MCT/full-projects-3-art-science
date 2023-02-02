@@ -12,12 +12,13 @@ fetch("../js/artworksData.json")
 getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionByID?id=${collectionID}`)
     .then(data => {
         initArtworks(data.data.listOfArtworks);
-
-
         sessionStorage.setItem("collectionName", data.data.collectionName)
         console.log(collectionName)
         document.getElementById("person-name").innerHTML = `<h1 class="greenBackground-title">${data.data.userFirstname}</h1>
         <h1 class="greenBackground-title">${data.data.userLastname}</h1>`;
+        document.getElementById("collection-box-title").innerHTML =
+            ` <h1 class="collection-title" id="collection-title">${collectionName}</h1>
+        <h3 class="collection-name">Collectie</h3>`;
     })
 
 
@@ -108,26 +109,21 @@ function renderArtworks(artworks) {
 getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${user.userId}`)
     .then(data => {
 
-        console.log(data.data)
         let array = data.data;
 
         var result = array.find(item => item.collectionId === collectionID);
-        console.log(result)
         if (result == undefined) {
             let htmlString = "";
-            htmlString = `<h1 class="collection-title" id="collection-title">${collectionName}</h1>
-            <h3 class="collection-name">Collectie</h3>
-
+            htmlString = `
             <button class="follow-col" id="follow-button"> Collectie volgen <i
                     class="fa-solid fa-square-plus"></i></button>`;
             let collectionHead = document.getElementById("collection-head");
-            collectionHead.innerHTML = "";
-            collectionHead.insertAdjacentHTML("afterbegin", htmlString)
+            collectionHead.innerHTML = htmlString;
+            // collectionHead.insertAdjacentHTML("afterbegin", htmlString)
 
             const followButton = document.getElementById("follow-button");
             followButton.addEventListener("click", event => {
                 let userId = user.userId;
-                console.log(userId)
 
 
                 updateData(`https://kunstinhuis-6ha5.onrender.com/addFollowerToCollection?id=${collectionID}`, "PATCH", {
@@ -140,8 +136,7 @@ getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${user.
             });
         } else {
             let htmlString = "";
-            htmlString = `  <h1 class="collection-title" id="collection-title">${collectionName}</h1>
-            <h3 class="collection-name">Collectie</h3>
+            htmlString = ` 
 
             <button class="follow-col" id="unfollow-button"> Collectie gevolgd <i class="fa-solid fa-check"></i></button>`;
             let collectionHead = document.getElementById("collection-head");
@@ -150,9 +145,8 @@ getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${user.
 
             const followButton = document.getElementById("unfollow-button");
             followButton.addEventListener("click", event => {
-                console.log("werkt deze knop nu voor de stoppen met volgen?")
+                // console.log("werkt deze knop nu voor de stoppen met volgen?")
                 let userId = user.userId;
-                console.log(userId)
                 updateData(`https://kunstinhuis-6ha5.onrender.com/unfollowCollection?id=${collectionID}`, "POST", {
                     "followers": userId
                 })
