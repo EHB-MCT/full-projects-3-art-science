@@ -35,6 +35,15 @@ Node required for this step: https://nodejs.org/en/download/
 Download the backend file and create a local server. To create a server that runs locally. Open the Back End folder in Visual Studio Code and open a terminal. Use the command “nodemon index.js” and press enter. Now the server runs locally and all the func􀆟ons of the webapp will work like the login/register system.
 
 ## Source list
-
+[ON/OFF Toggle button — step-by-step guide](https://dev.to/designyff/onoff-toggle-button-step-by-step-guide-3lal)
+[Online webfonts](https://www.onlinewebfonts.com/download/4a373e70cd01dec089c1dd1185ceba51)
+[Online webfonts](   https://www.onlinewebfonts.com/download/3724ece79a634e7b5168905d01e59a64)
+[Online webfonts]( https://www.onlinewebfonts.com/download/d9e4167d93282285853c2410eafc4abd)
+[Build a Content-based recommendation engine in JS]( https://dev.to/jimatjibba/build-a-content-based-recommendation-engine-in-js-2lpi)
+[Predicting Likes: Inside A Simple Recommendation Engine's Algorithms](https://www.toptal.com/algorithms/predicting-likes-inside-a-simple-recommendation-engine)
+[Github Tinder like](https://github.com/topics/tinder-like)
+[Swift Development with Visual Studio Code](https://nshipster.com/vscode/)
+[Framework RoomPlan](https://developer.apple.com/documentation/roomplan)
+[Overly](https://overlyapp.com/)
 
 ## ...
