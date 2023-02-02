@@ -17,6 +17,8 @@
 }
 
 
+
+
 .card img {
 
     object-fit: contain;
@@ -116,6 +118,7 @@
     grid-gap: 10px;
     margin: 0 auto;
     width: 88%;
+
 
 }
 

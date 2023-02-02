@@ -301,7 +301,9 @@ app.get("/getUserName", async (req, res) => {
     try {
         await client.connect();
         const colli = client.db("kunstinhuis").collection("users")
-        const query = { userId: req.query.id };
+        const query = {
+            userId: req.query.id
+        };
         const find = await colli.find({}).toArray;
         res.status(200).send({
             status: true,
@@ -324,7 +326,9 @@ app.get("/getCollectionByID", async (req, res) => {
     try {
         await client.connect();
         const colli = client.db("kunstinhuis").collection("artworkCollections")
-        const query = { collectionId: req.query.id };
+        const query = {
+            collectionId: req.query.id
+        };
         const find = await colli.findOne(query);
         res.status(200).send({
             status: true,
@@ -345,7 +349,9 @@ app.get("/getCollectionsByUserID", async (req, res) => {
     try {
         await client.connect();
         const colli = client.db("kunstinhuis").collection("artworkCollections")
-        const query = { userId: req.query.id };
+        const query = {
+            userId: req.query.id
+        };
         const find = await colli.find(query).toArray();
         res.status(200).send({
             status: true,
@@ -375,6 +381,97 @@ app.post("/deleteArtwork", async (req, res) => {
         let updateDoc = {
             $pull: {
                 listOfArtworks: req.body.listOfArtworks,
+            }
+        };
+        const result = await coll.updateMany(filter, updateDoc);
+
+        res.status(200).send({
+            status: true,
+            message: "Deze kunstwerk is succesvol bijgewerkt"
+        });
+    } catch (error) {
+        res.status(500).send({
+            status: false,
+            error: 'Something went wrong!',
+            value: error
+        });
+        console.log(error)
+    } finally {
+        await client.close();
+    }
+})
+
+app.patch("/addFollowerToCollection", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("artworkCollections")
+        const database = client.db("kunstinhuis");
+        const movies = database.collection("artworkCollections");
+        const filter = {
+            collectionId: req.query.id
+        };
+
+        let updateDoc = {
+            $push: {
+                followers: req.body.followers,
+            }
+        };
+        const result = await movies.updateMany(filter, updateDoc);
+
+        res.status(200).send({
+            status: true,
+            message: "Deze collectie is succesvol bijgewerkt"
+        });
+    } catch (error) {
+        res.status(500).send({
+            status: false,
+            error: 'Something went wrong!',
+            value: error
+        });
+    } finally {
+        await client.close();
+    }
+})
+
+app.get("/findFollowedCollection", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("artworkCollections")
+        const query = {
+            followers: req.query.id
+        };
+        const find = await colli.find(query).toArray();
+        res.status(200).send({
+            status: true,
+            data: find
+        });
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            error: 'Something went wrong!',
+            value: error
+        });
+    } finally {
+        await client.close();
+    }
+})
+
+
+
+app.post("/unfollowCollection", async (req, res) => {
+    try {
+        await client.connect();
+        const colli = client.db("kunstinhuis").collection("artworkCollections")
+        const database = client.db("kunstinhuis");
+        const coll = database.collection("artworkCollections");
+        const filter = {
+            collectionId: req.query.id
+        };
+
+        let updateDoc = {
+            $pull: {
+                followers: req.body.followers,
             }
         };
         const result = await coll.updateMany(filter, updateDoc);

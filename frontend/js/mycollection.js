@@ -1,5 +1,6 @@
 const collectionID = sessionStorage.getItem("collectionID");
 const collectionName1 = sessionStorage.getItem("collectionName");
+
 jsonDATA = [];
 fetch("../js/artworksData.json")
     .then(res => res.json())
@@ -10,6 +11,7 @@ getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionByID?id=${collection
     document.getElementById("collection-title").innerHTML = data.data.collectionName;
     sessionStorage.setItem("collectionName", data.data.collectionName)
 })
+
 function initArtworks(data) {
     let artworksFoundFromJSON = [];
     data.forEach(element => {
@@ -21,6 +23,7 @@ function initArtworks(data) {
     });
     renderArtworks(artworksFoundFromJSON)
 }
+
 function renderArtworks(artworks) {
     let htmlString = "";
     artworks.forEach(item => {
@@ -64,6 +67,7 @@ function renderArtworks(artworks) {
     let container = document.getElementById("artworks-cards");
     container.innerHTML = htmlString;
 }
+
 function deleteArtwork(artworkId, collectionName) {
     document.getElementById("background-shadow").innerHTML =
         `<div id="box-messeage">
@@ -77,7 +81,9 @@ function deleteArtwork(artworkId, collectionName) {
         document.getElementById("background-shadow").style.display = "none";
     })
     document.getElementById("delete-btn").addEventListener("click", e => {
-        getData(`http://localhost:3000/deleteArtwork?id=${collectionID}`, "POST", { "listOfArtworks": artworkId })
+        getData(`http://localhost:3000/deleteArtwork?id=${collectionID}`, "POST", {
+            "listOfArtworks": artworkId
+        })
         document.getElementById("box-messeage").innerHTML = `<h1>Het kunstwerk is succesvol verwijderd uit ${collectionName1}</h1>`;
         document.getElementById("box-messeage").style.color = "#00BC85";
         setTimeout(function () {

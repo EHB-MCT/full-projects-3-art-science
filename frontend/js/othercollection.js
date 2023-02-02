@@ -1,4 +1,7 @@
 const collectionID = sessionStorage.getItem("collectionID");
+let user = JSON.parse(sessionStorage.getItem('user'));
+let collectionName = sessionStorage.getItem("collectionName");
+
 
 
 // GET JSON FILE DATA
@@ -9,6 +12,10 @@ fetch("../js/artworksData.json")
 getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionByID?id=${collectionID}`)
     .then(data => {
         initArtworks(data.data.listOfArtworks);
+
+
+        sessionStorage.setItem("collectionName", data.data.collectionName)
+        console.log(collectionName)
         document.getElementById("person-name").innerHTML = `<h1 class="greenBackground-title">${data.data.userFirstname}</h1>
         <h1 class="greenBackground-title">${data.data.userLastname}</h1>`;
     })
@@ -21,8 +28,14 @@ async function getData(url) {
         });
         const json = await resp.json();
         return json
-    } catch (error) { }
+    } catch (error) {}
 }
+
+
+
+
+
+
 function initArtworks(data) {
     let artworksFoundFromJSON = [];
 
@@ -35,6 +48,7 @@ function initArtworks(data) {
     });
     renderArtworks(artworksFoundFromJSON)
 }
+
 function renderArtworks(artworks) {
     let htmlString = "";
     artworks.forEach(item => {
@@ -80,3 +94,99 @@ function renderArtworks(artworks) {
     container.insertAdjacentHTML("afterbegin", htmlString);
 
 }
+
+
+
+
+// const followButton = document.getElementById("follow-button");
+// followButton.addEventListener("click", event => {
+//     console.log("werkt dit?")
+
+
+//     let userId = user.userId;
+//     console.log(userId)
+
+// })
+
+
+
+
+async function updateData(url, method, data) {
+    try {
+        let resp = await fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const json = await resp.json();
+        return json
+    } catch (error) {
+        console.log('catch', error)
+    }
+}
+
+
+
+getData(`http://localhost:3000/findFollowedCollection?id=${user.userId}`)
+    .then(data => {
+
+        console.log(data.data)
+        let array = data.data;
+
+        var result = array.find(item => item.collectionId === collectionID);
+        console.log(result)
+        if (result == undefined) {
+            let htmlString = "";
+            htmlString = `<h1 class="collection-title" id="collection-title">${collectionName}</h1>
+            <h3 class="collection-name">Collectie</h3>
+
+            <button class="follow-col" id="follow-button"> Collectie volgen <i
+                    class="fa-solid fa-square-plus"></i></button>`;
+            let collectionHead = document.getElementById("collection-head");
+            collectionHead.innerHTML = "";
+            collectionHead.insertAdjacentHTML("afterbegin", htmlString)
+
+            const followButton = document.getElementById("follow-button");
+            followButton.addEventListener("click", event => {
+                let userId = user.userId;
+                console.log(userId)
+
+
+                updateData(`http://localhost:3000/addFollowerToCollection?id=${collectionID}`, "PATCH", {
+                    "followers": userId
+                })
+                setTimeout(function () {
+                    location.reload();
+                }, 500)
+
+            });
+        } else {
+            let htmlString = "";
+            htmlString = `  <h1 class="collection-title" id="collection-title">${collectionName}</h1>
+            <h3 class="collection-name">Collectie</h3>
+
+            <button class="follow-col" id="unfollow-button"> Collectie gevolgd <i class="fa-solid fa-check"></i></button>`;
+            let collectionHead = document.getElementById("collection-head");
+            collectionHead.innerHTML = "";
+            collectionHead.insertAdjacentHTML("afterbegin", htmlString)
+
+            const followButton = document.getElementById("unfollow-button");
+            followButton.addEventListener("click", event => {
+                console.log("werkt deze knop nu voor de stoppen met volgen?")
+                let userId = user.userId;
+                console.log(userId)
+                updateData(`http://localhost:3000/unfollowCollection?id=${collectionID}`, "POST", {
+                    "followers": userId
+                })
+                setTimeout(function () {
+                    location.reload()
+                }, 500)
+
+            });
+
+        }
+
+
+    })
