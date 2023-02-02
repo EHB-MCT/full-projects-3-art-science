@@ -23,7 +23,7 @@ async function getData(url) {
         const json = await resp.json();
         return json
 
-    } catch (error) {}
+    } catch (error) { }
 }
 
 function renderFollowedCollections(data) {
@@ -44,7 +44,7 @@ function renderFollowedCollections(data) {
                 src="https://kunstinhuis.be/assets/files/artworks/_grid/${result[0]}_${result[1]}.jpg"
                 alt=""></a>
         <h3>${item.collectionName}</h3>
-        <p>Door ${item.userFirstname} ${item.username}</p>
+        <p>Door ${item.userFirstname} ${item.userLastname}</p>
     </div>
        `;
     });
