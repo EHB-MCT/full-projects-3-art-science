@@ -224,3 +224,18 @@ input:checked+.slider:before {
 .delete-btn button {
   background-color: #FC6256;
 }
+
+#collection-box-title {
+  margin-left: 5%;
+  margin-top: 15px;
+}
+
+#collection-box-title h1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+#collection-box-title h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}
