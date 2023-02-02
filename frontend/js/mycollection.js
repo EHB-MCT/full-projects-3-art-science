@@ -78,8 +78,9 @@ function deleteArtwork(artworkId, collectionName) {
     })
     document.getElementById("delete-btn").addEventListener("click", e => {
         getData(`https://kunstinhuis-6ha5.onrender.com/deleteArtwork?id=${collectionID}`, "POST", { "listOfArtworks": artworkId })
-        document.getElementById("box-messeage").innerHTML = `<h1>Het kunstwerk is succesvol verwijderd uit ${collectionName1}</h1>`;
-        document.getElementById("box-messeage").style.color = "#00BC85";
+        document.getElementById("box-messeage").innerHTML = `<h1 id="h1-success-message">Het kunstwerk is succesvol verwijderd uit ${collectionName1}</h1>`;
+        document.getElementById("h1-success-message").style.color = "#f1f0eb";
+        document.getElementById("box-messeage").style.backgroundColor = "#00BC85";
         setTimeout(function () {
             window.location.reload();
         }, 2500)
