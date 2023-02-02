@@ -215,16 +215,6 @@ input:checked+.slider:before {
     transition: .3s;
 }
 
-.circle {
-    position: absolute;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background-color: white;
-    transition: .3s;
-}
-
 .active {
     border-color: #FC6256;
 }
