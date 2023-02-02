@@ -6,7 +6,7 @@ getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionsByUserID?id=${userI
 
     })
 
-getData(`http://localhost:3000/findFollowedCollection?id=${userId.userId}`)
+getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${userId.userId}`)
     .then(data => {
         renderFollowedCollections(data.data)
         console.log(data.data)
