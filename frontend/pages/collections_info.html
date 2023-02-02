@@ -95,8 +95,11 @@
             <p class="succesMessage-p" id="succesMessage-p">Succesvol toegevoegd aan collectie</p>
         </div>
         <div class="darker-popup" id="darker-popup"> </div>
+        <div class="paragraph-everything" id="artworkDetails">
+        </div>
 
-
+        <div class="collection-add" id="collection-add">
+        </div>
 </body>
 <script>
     function openNav() {
@@ -106,8 +109,17 @@
     function closeNav() {
         document.getElementById("myNav").style.height = "0%";
     }
+
+    function reply_click_collection(clicked_id) {
+        if (clicked_id) {
+
+            console.log(clicked_id);
+            sessionStorage.setItem("collectionID", clicked_id);
+            // window.location.replace("othercollection.html", clicked_id);
+        }
+
+    }
 </script>
 <script src="../js/collections_info.js"></script>
-<script src="../js/collection-popup.js"></script>
 
 </html>
