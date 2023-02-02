@@ -19,17 +19,7 @@ getData(`https://kunstinhuis-6ha5.onrender.com/getCollectionByID?id=${collection
         document.getElementById("person-name").innerHTML = `<h1 class="greenBackground-title">${data.data.userFirstname}</h1>
         <h1 class="greenBackground-title">${data.data.userLastname}</h1>`;
     })
-async function getData(url) {
-    try {
-        let resp = await fetch(url, {
-            headers: {
-                'Content-Type': "application/json"
-            },
-        });
-        const json = await resp.json();
-        return json
-    } catch (error) {}
-}
+
 
 
 
@@ -111,21 +101,7 @@ function renderArtworks(artworks) {
 
 
 
-async function updateData(url, method, data) {
-    try {
-        let resp = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify(data)
-        });
-        const json = await resp.json();
-        return json
-    } catch (error) {
-        console.log('catch', error)
-    }
-}
+
 
 
 
@@ -177,7 +153,7 @@ getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${user.
                 console.log("werkt deze knop nu voor de stoppen met volgen?")
                 let userId = user.userId;
                 console.log(userId)
-                updateData(`https://kunstinhuis-6ha5.onrender.comunfollowCollection?id=${collectionID}`, "POST", {
+                updateData(`https://kunstinhuis-6ha5.onrender.com/unfollowCollection?id=${collectionID}`, "POST", {
                     "followers": userId
                 })
                 setTimeout(function () {
@@ -190,3 +166,29 @@ getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${user.
 
 
     })
+async function getData(url) {
+    try {
+        let resp = await fetch(url, {
+            headers: {
+                'Content-Type': "application/json"
+            },
+        });
+        const json = await resp.json();
+        return json
+    } catch (error) { }
+}
+async function updateData(url, method, data) {
+    try {
+        let resp = await fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const json = await resp.json();
+        return json
+    } catch (error) {
+        console.log('catch', error)
+    }
+}

@@ -10,6 +10,8 @@ const {
 } = require('uuid');
 require("dotenv").config()
 const client = new MongoClient(process.env.FINAL_URL)
+client.connect();
+
 app.use(express.urlencoded({
     extended: false
 }));
@@ -18,7 +20,6 @@ app.use(express.json())
 
 app.listen(3000);
 console.log("app running at http://localhost:3000");
-
 app.post("/register", async (req, res) => {
     if (!req.body.firstname || !req.body.lastname || !req.body.email ||
         !req.body.password || !req.body.confirmPassword) {
@@ -30,7 +31,7 @@ app.post("/register", async (req, res) => {
         return;
     }
     try {
-        await client.connect();
+
         let newUser = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -65,8 +66,6 @@ app.post("/register", async (req, res) => {
             message: "something went wrong",
         })
         console.log(500)
-    } finally {
-        await client.close();
     }
 })
 app.post("/login", async (req, res) => {
@@ -79,7 +78,7 @@ app.post("/login", async (req, res) => {
         return;
     }
     try {
-        await client.connect();
+
         let loginuser = {
             email: req.body.email,
             password: req.body.password
@@ -117,8 +116,6 @@ app.post("/login", async (req, res) => {
         }
     } catch (err) {
         res.status(500).send('something went wrong')
-    } finally {
-        await client.close();
     }
 })
 app.post("/saveUserInterest", async (req, res) => {
@@ -132,7 +129,7 @@ app.post("/saveUserInterest", async (req, res) => {
 
 
     try {
-        await client.connect();
+
         const colliUserId = client.db("kunstinhuis").collection("users")
         const query = {
             userId: req.query.id
@@ -161,13 +158,11 @@ app.post("/saveUserInterest", async (req, res) => {
             value: error
         });
 
-    } finally {
-        await client.close();
     }
 });
 app.get("/getUserInterest", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("userInterest")
         const query = {
             userId: req.query.id
@@ -181,8 +176,6 @@ app.get("/getUserInterest", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.post("/saveCollection", async (req, res) => {
@@ -195,7 +188,7 @@ app.post("/saveCollection", async (req, res) => {
         return;
     }
     try {
-        await client.connect();
+
         const colliUserId = client.db("kunstinhuis").collection("users")
         const query = {
             userId: req.query.id
@@ -223,13 +216,11 @@ app.post("/saveCollection", async (req, res) => {
             error: "Something went wrong",
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.patch("/updateCollection", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const database = client.db("kunstinhuis");
         const movies = database.collection("artworkCollections");
@@ -254,13 +245,11 @@ app.patch("/updateCollection", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.delete("/deleteCollection", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const query = {
             collectionId: req.query.id
@@ -275,13 +264,11 @@ app.delete("/deleteCollection", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.get("/getAllCollections", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
 
         const find = await colli.find({}).toArray();
@@ -293,13 +280,11 @@ app.get("/getAllCollections", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.get("/getUserName", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("users")
         const query = {
             userId: req.query.id
@@ -318,13 +303,11 @@ app.get("/getUserName", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.get("/getCollectionByID", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const query = {
             collectionId: req.query.id
@@ -341,13 +324,11 @@ app.get("/getCollectionByID", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.get("/getCollectionsByUserID", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const query = {
             userId: req.query.id
@@ -364,13 +345,11 @@ app.get("/getCollectionsByUserID", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 app.post("/deleteArtwork", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const database = client.db("kunstinhuis");
         const coll = database.collection("artworkCollections");
@@ -396,14 +375,12 @@ app.post("/deleteArtwork", async (req, res) => {
             value: error
         });
         console.log(error)
-    } finally {
-        await client.close();
     }
 })
 
 app.patch("/addFollowerToCollection", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const database = client.db("kunstinhuis");
         const movies = database.collection("artworkCollections");
@@ -428,14 +405,12 @@ app.patch("/addFollowerToCollection", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 
 app.get("/findFollowedCollection", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const query = {
             followers: req.query.id
@@ -452,8 +427,6 @@ app.get("/findFollowedCollection", async (req, res) => {
             error: 'Something went wrong!',
             value: error
         });
-    } finally {
-        await client.close();
     }
 })
 
@@ -461,7 +434,7 @@ app.get("/findFollowedCollection", async (req, res) => {
 
 app.post("/unfollowCollection", async (req, res) => {
     try {
-        await client.connect();
+
         const colli = client.db("kunstinhuis").collection("artworkCollections")
         const database = client.db("kunstinhuis");
         const coll = database.collection("artworkCollections");
@@ -487,7 +460,5 @@ app.post("/unfollowCollection", async (req, res) => {
             value: error
         });
         console.log(error)
-    } finally {
-        await client.close();
     }
 })
