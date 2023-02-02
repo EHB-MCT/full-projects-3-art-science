@@ -129,7 +129,7 @@ async function updateData(url, method, data) {
 
 
 
-getData(`http://localhost:3000/findFollowedCollection?id=${user.userId}`)
+getData(`https://kunstinhuis-6ha5.onrender.com/findFollowedCollection?id=${user.userId}`)
     .then(data => {
 
         console.log(data.data)
@@ -154,7 +154,7 @@ getData(`http://localhost:3000/findFollowedCollection?id=${user.userId}`)
                 console.log(userId)
 
 
-                updateData(`http://localhost:3000/addFollowerToCollection?id=${collectionID}`, "PATCH", {
+                updateData(`https://kunstinhuis-6ha5.onrender.com/addFollowerToCollection?id=${collectionID}`, "PATCH", {
                     "followers": userId
                 })
                 setTimeout(function () {
@@ -177,7 +177,7 @@ getData(`http://localhost:3000/findFollowedCollection?id=${user.userId}`)
                 console.log("werkt deze knop nu voor de stoppen met volgen?")
                 let userId = user.userId;
                 console.log(userId)
-                updateData(`http://localhost:3000/unfollowCollection?id=${collectionID}`, "POST", {
+                updateData(`https://kunstinhuis-6ha5.onrender.comunfollowCollection?id=${collectionID}`, "POST", {
                     "followers": userId
                 })
                 setTimeout(function () {
